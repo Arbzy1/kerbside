@@ -1,0 +1,6 @@
+metric,label,value,n_points,n_authorities
+within_city,Within-city (random KFold),0.41498237489520245,8735,36
+across_city,Across-city (leave-city-out),0.4025351129229656,8735,36
+transfer_penalty,Transfer penalty,-0.012447261972236834,8735,36
+cardiff_only,Cardiff-only model (random KFold),0.3976637988002552,78,1
+cardiff_from_elsewhere,"Trained elsewhere, predicting Cardiff",0.13749205039654888,78,36

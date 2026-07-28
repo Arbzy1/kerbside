@@ -1,0 +1,26 @@
+# Worker secrets (DATABASE_URL) are never stored here.
+# Upload per environment:
+#   npx wrangler secret put DATABASE_URL --env staging
+#   npx wrangler secret put DATABASE_URL --env production
+#
+# CORS_ORIGIN must match the Pages project URL for that environment.
+# Update after you create the Pages projects if the *.pages.dev hostname differs.
+
+name = "kerbside-api"
+main = "src/index.ts"
+compatibility_date = "2025-06-01"
+
+[dev]
+port = 8787
+
+[env.staging]
+name = "kerbside-api-staging"
+
+[env.staging.vars]
+CORS_ORIGIN = "https://kerbside-web-staging.pages.dev"
+
+[env.production]
+name = "kerbside-api"
+
+[env.production.vars]
+CORS_ORIGIN = "https://kerbside-web.pages.dev"

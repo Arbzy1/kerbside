@@ -1,0 +1,28 @@
+node_modules/
+dist/
+build/
+.turbo/
+.wrangler/
+.dev.vars
+.env
+.env.*
+!.env.example
+
+# Test / coverage
+coverage/
+test-results/
+playwright-report/
+blob-report/
+.vitest/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.log
+.vscode/*
+!.vscode/extensions.json
+
+# Package managers (npm only)
+pnpm-lock.yaml
+yarn.lock
+.pnpm-store/

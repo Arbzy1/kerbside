@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1785179685975,
+      "tag": "0000_famous_thor_girl",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1785179800000,
+      "tag": "0001_rls_public_read",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1785179900000,
+      "tag": "0002_model_results_nulls_not_distinct",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1785245860033,
+      "tag": "0003_lethal_bug",
+      "breakpoints": true
+    }
+  ]
+}

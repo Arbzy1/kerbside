@@ -1,0 +1,45 @@
+{
+  "name": "kerbside",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --fix",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "rules:sync": "node scripts/sync-rules.js",
+    "data:sync": "node scripts/sync-results.js",
+    "db:generate": "npm run db:generate -w @kerbside/api",
+    "db:migrate": "npm run db:migrate -w @kerbside/api",
+    "db:seed": "npm run db:seed -w @kerbside/api",
+    "db:studio": "npm run db:studio -w @kerbside/api",
+    "db:migrate:staging": "npm run db:migrate -w @kerbside/api",
+    "db:migrate:prod": "npm run db:migrate -w @kerbside/api",
+    "deploy:staging": "npm run deploy:staging -w @kerbside/api && npm run deploy:staging -w @kerbside/web",
+    "deploy:prod": "npm run deploy:prod -w @kerbside/api && npm run deploy:prod -w @kerbside/web",
+    "smoke:deploy": "node scripts/smoke-deploy.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@playwright/test": "^1.52.0",
+    "dotenv": "^17.4.2",
+    "eslint": "^9.28.0",
+    "globals": "^16.2.0",
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1",
+    "vitest": "^3.2.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "npm@10.9.2"
+}
