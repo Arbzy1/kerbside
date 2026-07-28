@@ -9,8 +9,8 @@
     "typecheck": "tsc -b --pretty false",
     "lint": "eslint src --max-warnings 0",
     "preview": "vite preview",
-    "deploy:staging": "tsc -b && vite build && wrangler pages deploy dist --project-name=kerbside-web-staging",
-    "deploy:prod": "tsc -b && vite build && wrangler pages deploy dist --project-name=kerbside-web"
+    "deploy:staging": "tsc -b && vite build && wrangler pages deploy dist --project-name=kerbside-web-staging --branch main",
+    "deploy:prod": "tsc -b && vite build && wrangler pages deploy dist --project-name=kerbside-web --branch main"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.3.0",
