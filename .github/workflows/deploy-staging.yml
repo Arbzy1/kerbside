@@ -1,0 +1,62 @@
+name: Deploy staging
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      VITE_API_URL: ${{ vars.STAGING_API_URL }}
+      SMOKE_API_URL: ${{ vars.STAGING_API_URL }}
+      SMOKE_WEB_URL: ${{ vars.STAGING_WEB_URL }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm run test:unit
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Write API .dev.vars for e2e
+        run: printf 'DATABASE_URL=%s\n' "$DATABASE_URL" > apps/api/.dev.vars
+
+      - name: E2E tests
+        run: npm run test:e2e
+
+      - name: Migrate staging database
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL_STAGING }}
+        run: npm run db:migrate:staging
+
+      - name: Deploy staging
+        run: npm run deploy:staging
+
+      - name: Smoke test staging
+        run: npm run smoke:deploy
