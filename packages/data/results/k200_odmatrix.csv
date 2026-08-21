@@ -1,0 +1,4 @@
+city,arm,n,n_cols,r2_spatial
+cardiff,baseline,147,6,0.5270248371282025
+cardiff,odmatrix,147,6,0.5010517060700398
+cardiff,baseline_full,147,9,0.5627143108386153

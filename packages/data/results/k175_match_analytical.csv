@@ -1,0 +1,4 @@
+city,n,r2_det,r2_corr,euclid_r2,delta_vs_euclid,floor,inside_floor,n_counters_k170,arm
+cardiff,149,0.4711219824182488,0.4754528163698784,0.5501564746481119,-0.07903449222986308,0.013974,False,149,C:\Users\aden\Documents\DISSERTATION\DISSERTATION\outputs\k175_match_analytical\cardiff\cardiff_arm.shp
+bristol,178,0.24684085551652105,0.2547049973483193,0.2852796676251899,-0.03843881210866887,0.004457,False,178,C:\Users\aden\Documents\DISSERTATION\DISSERTATION\outputs\k175_match_analytical\bristol\bristol_arm.shp
+manchester,246,0.30957634850875715,0.3121025669176375,0.3076982874424302,0.0018780610663269304,0.000757,False,246,C:\Users\aden\Documents\DISSERTATION\DISSERTATION\outputs\k175_match_analytical\manchester\manchester_arm.shp

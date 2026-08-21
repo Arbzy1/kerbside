@@ -19,8 +19,10 @@ export function CityTable({ cities }: CityTableProps) {
       <TableHeader>
         <TableRow>
           <TableHead>City</TableHead>
-          <TableHead className="text-right">n count points</TableHead>
-          <TableHead className="text-right">Held-out R²</TableHead>
+          <TableHead className="text-right">n</TableHead>
+          <TableHead className="text-right">LOCO r²</TableHead>
+          <TableHead className="text-right">LOCO R²</TableHead>
+          <TableHead className="text-right">Local-10 R²</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -31,7 +33,13 @@ export function CityTable({ cities }: CityTableProps) {
               {city.nCountPoints}
             </TableCell>
             <TableCell className="text-right tabular-nums">
+              {formatSignedR2(city.heldOutR2Corr)}
+            </TableCell>
+            <TableCell className="text-right tabular-nums">
               {formatSignedR2(city.heldOutR2)}
+            </TableCell>
+            <TableCell className="text-right tabular-nums">
+              {formatSignedR2(city.local10R2)}
             </TableCell>
           </TableRow>
         ))}

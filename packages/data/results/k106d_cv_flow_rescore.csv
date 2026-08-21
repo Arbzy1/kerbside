@@ -1,0 +1,3 @@
+envelope,radii,n,r2_m0,r2_m0_cv,delta,null_mean,null_pct,beats_null,cv_cols,prediction
+narrow,"400,800,1600",589,0.4700836555721567,0.45236354403608525,-0.017720111536071503,-0.012605782792739944,22.0,False,"count_bicycle,count_person,count_car,count_truck,count_bus,count_traffic_light",covariate_weak
+wide,"800,1600,3200",589,0.48926764063655304,0.41777522522089755,-0.07149241541565549,-0.012908615955126292,0.5,False,"count_bicycle,count_person,count_car,count_truck,count_bus,count_traffic_light",covariate_weak

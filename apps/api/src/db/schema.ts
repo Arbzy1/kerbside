@@ -3,6 +3,7 @@ import {
   doublePrecision,
   index,
   integer,
+  jsonb,
   pgEnum,
   pgTable,
   text,
@@ -17,6 +18,9 @@ export const verdictKindEnum = pgEnum("verdict_kind", [
   "disproven",
   "harmful",
   "untested",
+  "withdrawn",
+  "city_specific",
+  "suggestive",
 ]);
 
 export const cities = pgTable(
@@ -58,6 +62,7 @@ export const modelResults = pgTable(
       .notNull()
       .references(() => experiments.id, { onDelete: "cascade" }),
     modelName: text("model_name").notNull(),
+    city: text("city"),
     k: integer("k"),
     randomR2: doublePrecision("random_r2"),
     spatialR2: doublePrecision("spatial_r2"),
@@ -72,6 +77,35 @@ export const modelResults = pgTable(
       table.modelName,
       table.k,
       table.notes,
+      table.city,
+    ),
+  ],
+);
+
+export const controls = pgTable(
+  "controls",
+  {
+    id: uuid("id").defaultRandom().primaryKey(),
+    experimentId: uuid("experiment_id").references(() => experiments.id, {
+      onDelete: "cascade",
+    }),
+    city: text("city").notNull(),
+    testName: text("test_name").notNull(),
+    configName: text("config_name").notNull(),
+    realValue: doublePrecision("real_value").notNull(),
+    nullMean: doublePrecision("null_mean").notNull(),
+    nullSd: doublePrecision("null_sd").notNull(),
+    nullN: integer("null_n").notNull(),
+    percentile: doublePrecision("percentile").notNull(),
+    interpretation: text("interpretation").notNull(),
+    nullDraws: jsonb("null_draws").$type<number[]>().notNull().default([]),
+  },
+  (table) => [
+    index("controls_city_idx").on(table.city),
+    uniqueIndex("controls_natural_uidx").on(
+      table.city,
+      table.testName,
+      table.configName,
     ),
   ],
 );
@@ -93,11 +127,19 @@ export const verdicts = pgTable(
 export const experimentsRelations = relations(experiments, ({ many }) => ({
   modelResults: many(modelResults),
   verdicts: many(verdicts),
+  controls: many(controls),
 }));
 
 export const modelResultsRelations = relations(modelResults, ({ one }) => ({
   experiment: one(experiments, {
     fields: [modelResults.experimentId],
+    references: [experiments.id],
+  }),
+}));
+
+export const controlsRelations = relations(controls, ({ one }) => ({
+  experiment: one(experiments, {
+    fields: [controls.experimentId],
     references: [experiments.id],
   }),
 }));

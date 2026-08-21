@@ -1,0 +1,3 @@
+family,file,winner,adopted,m_arms,n_cities,observed_gap,null_mean,null_p95,p_phipson_smyth,selected_winner,expected_inflation
+"radius envelope (K174, 12 cities)",k174_loco.csv,baseline,baseline,3,12,0.007985746421277529,0.005108991738372854,0.010145224310595858,0.14557088582283542,True,0.005108991738372854
+"published slope `s` (K171, 12 cities)",k171_loco_published_s.csv,cycle,baseline,4,12,0.009861210639076412,0.005563609948490165,0.009290594142353744,0.026994601079784044,False,0.005563609948490165

@@ -1,0 +1,155 @@
+highway,median,count,slug
+"['cycleway', 'unclassified']",1836.0,1,cardiff
+"['primary', 'primary_link']",60908.0,4,cardiff
+"['track', 'service']",79133.0,1,cardiff
+"['trunk', 'trunk_link']",74427.0,2,cardiff
+cycleway,23210.0,3,cardiff
+primary,16723.0,48,cardiff
+residential,828.0,43,cardiff
+secondary,6843.0,12,cardiff
+service,807.0,3,cardiff
+tertiary,8124.0,19,cardiff
+trunk,51380.5,10,cardiff
+unclassified,2212.5,6,cardiff
+"['bridleway', 'service']",125214.0,1,manchester
+"['trunk', 'trunk_link']",32677.0,3,manchester
+cycleway,23713.0,5,manchester
+path,143901.0,5,manchester
+pedestrian,1208.0,2,manchester
+primary,6789.5,40,manchester
+residential,1069.5,60,manchester
+secondary,11573.0,12,manchester
+service,35202.5,10,manchester
+tertiary,7214.0,35,manchester
+track,50381.0,2,manchester
+trunk,22497.0,73,manchester
+trunk_link,37443.0,2,manchester
+unclassified,3080.0,8,manchester
+"['trunk', 'trunk_link']",43881.5,2,bristol
+"['unclassified', 'primary_link']",14890.0,1,bristol
+cycleway,56313.0,3,bristol
+pedestrian,1588.0,1,bristol
+primary,12508.0,45,bristol
+primary_link,41431.0,1,bristol
+residential,818.5,44,bristol
+secondary,8523.0,14,bristol
+service,22577.5,8,bristol
+tertiary,5290.0,5,bristol
+trunk,20469.0,41,bristol
+trunk_link,16357.0,4,bristol
+unclassified,5275.0,11,bristol
+cycleway,30907.5,6,birmingham
+living_street,10330.0,1,birmingham
+path,28040.0,3,birmingham
+primary,15965.5,44,birmingham
+residential,1067.0,105,birmingham
+secondary,10870.0,29,birmingham
+service,11299.5,12,birmingham
+tertiary,7149.0,41,birmingham
+track,17802.5,2,birmingham
+trunk,26758.0,79,birmingham
+trunk_link,29723.0,6,birmingham
+unclassified,3525.0,21,birmingham
+"['cycleway', 'pedestrian']",145537.0,1,glasgow
+"['cycleway', 'residential']",67576.0,2,glasgow
+"['path', 'residential']",61450.0,1,glasgow
+cycleway,13483.0,17,glasgow
+path,9590.0,5,glasgow
+pedestrian,483.0,1,glasgow
+primary,10881.0,102,glasgow
+primary_link,64178.0,2,glasgow
+residential,3292.0,23,glasgow
+secondary,9235.0,7,glasgow
+service,10380.0,26,glasgow
+tertiary,7500.0,27,glasgow
+track,98610.0,1,glasgow
+trunk,16611.0,1,glasgow
+unclassified,5551.0,14,glasgow
+"['trunk_link', 'trunk']",32124.0,2,liverpool
+cycleway,9346.0,5,liverpool
+pedestrian,1993.0,4,liverpool
+primary,7563.0,72,liverpool
+primary_link,19372.0,1,liverpool
+residential,1382.0,55,liverpool
+secondary,12000.0,10,liverpool
+service,7026.0,18,liverpool
+tertiary,6839.0,25,liverpool
+trunk,23918.0,66,liverpool
+trunk_link,24403.0,1,liverpool
+unclassified,3724.0,14,liverpool
+"['cycleway', 'residential']",39044.0,1,sheffield
+"['path', 'cycleway']",72654.0,1,sheffield
+"['path', 'service']",63876.5,2,sheffield
+"['service', 'residential']",68245.0,1,sheffield
+cycleway,64625.0,4,sheffield
+path,10386.0,1,sheffield
+primary,11513.0,39,sheffield
+primary_link,19754.0,1,sheffield
+residential,718.5,44,sheffield
+secondary,10913.0,18,sheffield
+service,2788.0,5,sheffield
+tertiary,4265.0,16,sheffield
+trunk,27633.0,41,sheffield
+unclassified,1501.0,21,sheffield
+"['bridleway', 'residential']",130896.0,1,wakefield
+"['cycleway', 'pedestrian']",24494.0,1,wakefield
+cycleway,19729.0,3,wakefield
+primary,13075.0,58,wakefield
+residential,1223.0,24,wakefield
+secondary,6471.0,7,wakefield
+service,22734.0,7,wakefield
+tertiary,5467.0,31,wakefield
+track,65679.0,1,wakefield
+trunk,17745.5,34,wakefield
+trunk_link,51462.5,2,wakefield
+unclassified,2499.0,6,wakefield
+"['track', 'bridleway']",50186.0,2,rotherham
+"['unclassified', 'residential']",2249.0,1,rotherham
+cycleway,21203.0,4,rotherham
+path,84508.5,2,rotherham
+primary,14936.0,38,rotherham
+residential,1268.5,64,rotherham
+secondary,11114.0,7,rotherham
+service,9377.5,4,rotherham
+tertiary,4625.0,29,rotherham
+trunk,26294.0,10,rotherham
+unclassified,1955.0,7,rotherham
+"['pedestrian', 'residential']",2375.0,1,wigan
+"['primary', 'trunk']",13109.0,1,wigan
+cycleway,11022.0,3,wigan
+path,193.0,1,wigan
+primary,12380.0,41,wigan
+primary_link,6267.0,1,wigan
+residential,971.5,24,wigan
+secondary,13827.0,11,wigan
+service,13324.0,7,wigan
+tertiary,4683.0,13,wigan
+trunk,16709.0,38,wigan
+unclassified,2375.0,3,wigan
+"['path', 'service']",65787.5,2,edinburgh
+"['service', 'track']",63510.0,1,edinburgh
+cycleway,981.5,4,edinburgh
+path,37081.0,1,edinburgh
+primary,14867.0,63,edinburgh
+residential,989.0,27,edinburgh
+secondary,13198.0,4,edinburgh
+service,5087.0,3,edinburgh
+tertiary,7576.5,24,edinburgh
+track,54730.0,2,edinburgh
+trunk,22631.0,1,edinburgh
+unclassified,5057.0,5,edinburgh
+"['path', 'track']",113273.0,1,nottingham
+cycleway,17073.0,3,nottingham
+living_street,553.0,1,nottingham
+path,19757.0,1,nottingham
+pedestrian,20881.0,1,nottingham
+primary,17044.0,38,nottingham
+primary_link,28886.0,1,nottingham
+residential,780.0,34,nottingham
+secondary,12651.0,5,nottingham
+service,12429.0,3,nottingham
+tertiary,3632.0,15,nottingham
+track,1839.0,1,nottingham
+trunk,32006.0,35,nottingham
+trunk_link,9362.5,2,nottingham
+unclassified,3964.0,7,nottingham

@@ -5,12 +5,32 @@ import { fileURLToPath } from "node:url";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const agentsPath = path.join(rootDir, "AGENTS.md");
 const body = fs.readFileSync(agentsPath, "utf8");
+const motionRule = `---
+description: Preserve smooth, accessible motion and readable glass UI in the React frontend
+globs: apps/web/src/**/*.{ts,tsx,css}
+alwaysApply: false
+---
+
+# Frontend motion and glass UI
+
+- Reuse the index.css motion tokens (--motion-* and --motion-ease) and utilities (motion-interactive, glass-surface, glass-surface-strong); do not introduce arbitrary animation timings or easing.
+- Interactive navigation, tabs, cards, buttons, loading states, and overlays should transition smoothly rather than change instantly.
+- Keep the prefers-reduced-motion fallback effective. Never make animation required for meaning, focus, or navigation.
+- Use route View Transitions where available, but retain correct behaviour in browsers without support.
+- Keep glass surfaces translucent, contrast-safe, and away from dense data visualisations unless text and chart legibility remain clear.
+`;
 
 const targets = [
   {
     rel: path.join(".cursor", "rules", "project.mdc"),
+    includeBanner: false,
     wrap: (content) =>
       `---\ndescription: Kerbside project rules (synced from AGENTS.md)\nglobs:\nalwaysApply: true\n---\n\n${content}`,
+  },
+  {
+    rel: path.join(".cursor", "rules", "frontend-motion.mdc"),
+    includeBanner: false,
+    wrap: () => motionRule,
   },
   {
     rel: "CLAUDE.md",
@@ -36,7 +56,7 @@ const banner =
 for (const target of targets) {
   const outPath = path.join(rootDir, target.rel);
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  const next = banner + target.wrap(body);
+  const next = (target.includeBanner === false ? "" : banner) + target.wrap(body);
   fs.writeFileSync(outPath, next, "utf8");
   console.log(`wrote ${target.rel}`);
 }

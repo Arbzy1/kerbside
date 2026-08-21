@@ -1,0 +1,1422 @@
+{
+  "generated": "2026-08-21",
+  "source": "KERBSIDE \u2014 numbers read live from results/*.csv, not restated",
+  "authority": "grok3rdaugust/PRESENTABLE_CLAIMS.md",
+  "note": "Verdicts: proven / suggestive / city_specific / disproven / withdrawn / untested / harmful. 'suggestive' is used where a point estimate is measured but its credible interval spans zero \u2014 the Application schema currently lacks this value and should gain it rather than rounding such claims up to 'proven'. Every 'numbers' value is read from the evidence file listed alongside it.",
+  "superseded": [
+    {
+      "id": "slope_ladder",
+      "by": "slope_calibration",
+      "reason": "Measured at radii=400,800,1600. Reverses sign at the corrected envelope. See C23.",
+      "action": "Render as WITHDRAWN. Do NOT delete the row \u2014 the withdrawal is the finding, and dropping it silently is how a stale number survives."
+    },
+    {
+      "id": "multimodal_placebo",
+      "by": "multimodal",
+      "reason": "K93's placebo varied network AND metric together. Held fixed, the build effect is +0.004, inside Cardiff's floor. See C24.",
+      "action": "Render as WITHDRAWN alongside `multimodal`, which keeps the method result. The build is exonerated; the n=26 limitation is unchanged."
+    }
+  ],
+  "standing_warning": "Any claim measured at radii=400,800,1600 is PROVISIONAL until re-tested at a wider envelope. That one fixed parameter has now overturned or qualified five results (Bristol's slope sign, Manchester's architectural endpoint, Cardiff's slope exponent, the mechanism behind the between-city slope disagreement, and the whole radius framing via radius_per_city). Claims still resting on it: turn_cost, demand_null, and the band-edge families. SEPARATELY: several reported optima are PLATEAUX, not point estimates \u2014 see plateau_audit before quoting any optimum as a single value.",
+  "claims": [
+    {
+      "id": "radius",
+      "title": "The inherited narrow radius envelope is too narrow",
+      "verdict": "proven",
+      "summary": "Every configuration in this project used radii 400,800,1600 \u2014 an early choice, never varied, and it is the one thing the evidence rejects: 800,1600,3200 beats it by +0.021 mean held-out r2 in 11 of 12 cities (95% CI +0.012 to +0.032). What the evidence does NOT establish is 800,1600,3200 over the wider 1600,3200,6400: that contrast is +0.003 with a CI of -0.012 to +0.017 on 7 of 12 cities (K181), the wider envelope wins on DfT's observed-only counts (K182) and again under deduplication (K186), and a permutation over arm labels puts the winning margin inside what selection alone produces (K187). 800,1600,3200 is retained because C1 declared the tie-break on r2 before the scores were seen, not because it was shown to be better. Both surviving envelopes bracket the 3 km optimum of the published Cardiff calibration.",
+      "numbers": {
+        "pooled_r2_narrow": 0.4613454103339521,
+        "pooled_r2_wide": 0.5151137345703641,
+        "pooled_r2_higher": 0.4667234505555037,
+        "loco_r2_narrow": 0.3454477810677245,
+        "loco_r2_wide": 0.4149765413758273,
+        "loco_r2_higher": 0.3663172573167637,
+        "ci_lo": 0.0057944349367028,
+        "ci_hi": 0.1204813961299437,
+        "p_gt_0": 0.985,
+        "within_cardiff_narrow": 0.4736323756756634,
+        "within_cardiff_wide": 0.5618198119660195,
+        "within_bristol_narrow": 0.3694611014713483,
+        "within_bristol_wide": 0.3974538864193356,
+        "within_manchester_narrow": 0.4372902356834121,
+        "within_manchester_wide": 0.3685787741574852
+      },
+      "evidence": [
+        "k80_radius_pooled.csv",
+        "k80b_factorial.csv",
+        "k84_posterior.csv",
+        "k97_slope_x_radius.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Unimodal: LOCO +0.415 at 800,1600,3200 turns over to +0.366 at 1600,3200,6400 (K95). Drop far above every city floor; the turnover holds in all three cities. BUT the gain itself does not: scored within each city at the preset exponent it is +0.088 Cardiff and +0.028 Bristol but -0.069 MANCHESTER (91x its floor, the largest radius effect measured anywhere, in the wrong direction). This is the better TRANSFERABLE configuration \u2014 which is what LOCO and the credible interval measure \u2014 not the best choice for every city alone."
+    },
+    {
+      "id": "weighting",
+      "title": "Attractor weighting improves cycle-flow prediction",
+      "verdict": "city_specific",
+      "summary": "Putting POIs into the assignment as origin/destination weights improves prediction at the narrow radii \u2014 but its bootstrap interval includes zero, random weight fields reproduce most of the gain, and it is largely the same lever as radius.",
+      "numbers": {
+        "pooled_r2_unweighted": 0.4613454103339521,
+        "pooled_r2_weighted": 0.5150711963750043,
+        "loco_r2_unweighted": 0.3454477810677245,
+        "loco_r2_weighted": 0.4249493900663482,
+        "ci_lo": -0.0453114370295778,
+        "ci_hi": 0.2094211187577827,
+        "p_gt_0": 0.885
+      },
+      "evidence": [
+        "k80b_factorial.csv",
+        "k84_posterior.csv",
+        "k55_null_cardiff.csv",
+        "k55_null_manchester.csv"
+      ],
+      "chapter": "4",
+      "caveat": "95% credible interval includes zero. Do not present as established."
+    },
+    {
+      "id": "sub_additive",
+      "title": "Radius and attractor weighting are largely the SAME lever",
+      "verdict": "suggestive",
+      "summary": "A 2x2 factorial shows the two interventions give an identical pooled R2 alone and do not stack. Attractor weighting appears to work substantially by extending effective range \u2014 which the radius parameter does directly. This also explains why random weight fields reproduce the weighting gain.",
+      "numbers": {
+        "both": 0.0965871217997054,
+        "sum_of_mains": 0.14903036930672642,
+        "interaction_loco": -0.052443247507021,
+        "interaction_pooled": -0.0417535446966343,
+        "weighting_at_wide": 0.0270583614916026,
+        "radius_at_weighted": 0.0170855128010817
+      },
+      "evidence": [
+        "k80b_decomposition.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Interaction interval spans zero (P=0.875) \u2014 suggestive, not decisive."
+    },
+    {
+      "id": "demand_null",
+      "title": "The weight field fails a permutation null in both cities tested",
+      "verdict": "withdrawn",
+      "summary": "Twenty spatially-matched random weight fields reproduce most of the gain. The demand interpretation of the gravity weights does not survive.",
+      "numbers": {
+        "cardiff_p2all_pct": 0.65,
+        "manchester_p2all_pct": 0.85,
+        "manchester_sq2s_pct": 0.35
+      },
+      "evidence": [
+        "k55_null_cardiff.csv",
+        "k55_null_manchester.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Controls matched: Moran's I ratio 0.593 Cardiff vs 0.594 Manchester."
+    },
+    {
+      "id": "decay_curve",
+      "title": "An empirical distance-decay curve for cycling",
+      "verdict": "proven",
+      "summary": "sDNA exposes no decay parameter for betweenness \u2014 radius is a hard cut-off \u2014 so the banded coefficients ARE the calibrated decay function.",
+      "numbers": {
+        "band_100m": -0.0014755109895176,
+        "band_200m": 0.3835049036109377,
+        "band_400m": 0.5302111653490312,
+        "band_800m": 1.0465612857321678,
+        "band_1600m": -0.2645078089479311,
+        "band_3200m": -0.4208103173014945
+      },
+      "evidence": [
+        "k80_decay_curve.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Marginal contribution peaks at the 800 m band. Negative coefficients at large radii are conditional on the smaller bands being present (corridor-scale controls), not evidence that large radii harm."
+    },
+    {
+      "id": "turn_cost",
+      "title": "sDNA's cycle preset under-penalises turns on larger networks",
+      "verdict": "city_specific",
+      "summary": "Holding the line term fixed and moving only juncformula. Manchester has a clear optimum far above the preset's 13.4 m per 90-degree turn. Cardiff, with a noise floor 4.8x larger, resolves nothing \u2014 it alone would have reported a false null.",
+      "numbers": {
+        "bristol_best_turn_cost_m": 26.880000000000003,
+        "cardiff_best_turn_cost_m": 13.44,
+        "manchester_best_turn_cost_m": 430.08,
+        "bristol_delta": 0.0131852710497867,
+        "cardiff_delta": 0.0,
+        "manchester_delta": 0.0492900812646575,
+        "preset_turn_cost_m": 13.4,
+        "resolvable_arms_cardiff": 0,
+        "resolvable_arms_manchester": 5
+      },
+      "evidence": [
+        "k81_turn_sweep.csv"
+      ],
+      "chapter": "4",
+      "caveat": "At 430 m routes essentially never turn, so the parameter is partly a road-hierarchy proxy: corr(betweenness, major road) rises 0.080 -> 0.142. Real but too small to explain the whole effect. Confounded with OSM network simplification."
+    },
+    {
+      "id": "gva_pedestrian",
+      "title": "LSOA GVA does not correlate better with pedestrian than vehicular accessibility",
+      "verdict": "disproven",
+      "summary": "Cooper suggested GVA may correlate with pedestrian accessibility. Tested on Cardiff's unused 53,467-link walk network: it is the worst arm.",
+      "numbers": {
+        "walk_network": -0.0152491453020364,
+        "drive_angular": 0.0401153468930576,
+        "drive_cycle_unweighted": 0.165528440667461,
+        "drive_cycle_weighted": -0.0024238864178486,
+        "poi_reference": 0.3513603595610987
+      },
+      "evidence": [
+        "k82_gva_walk.csv",
+        "k82_gva_contrasts.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Not a matched isolation \u2014 the walk network is a different network (53k vs 16k links, 6 km vs 8 km footprint). It cannot separate 'pedestrian' from 'denser'."
+    },
+    {
+      "id": "gva_config_specific",
+      "title": "'sDNA does not predict GVA' is configuration-specific, not a property of sDNA",
+      "verdict": "city_specific",
+      "summary": "The gravity weighting that helps cycle flow actively destroys the GVA signal.",
+      "numbers": {
+        "cycle_neutral": 0.165528440667461,
+        "grav_sq2s": -0.0024238864178486,
+        "weighting_effect_on_gva": -0.1679523270853096
+      },
+      "evidence": [
+        "k82_gva_walk.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Contrast with cycle flow, where the same weighting is worth +0.077."
+    },
+    {
+      "id": "elevation",
+      "title": "DEM data-quality defects are real, measurable and immaterial",
+      "verdict": "disproven",
+      "summary": "A registered prediction said correcting implausible gradients would raise Bristol's slope effect. It fell. Correcting them moves predictive performance by less than the noise floor in all three cities.",
+      "numbers": {
+        "cardiff_delta": 0.001322207488675,
+        "bristol_delta": -0.0043104386293473,
+        "manchester_delta": 0.0001970393045407,
+        "cardiff_floor": 0.024,
+        "bristol_floor": 0.008,
+        "manchester_floor": 0.005
+      },
+      "evidence": [
+        "k83_elevation_slope.csv",
+        "k83_dose_bristol_ext20.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Well-behaved falsification: shift magnitude tracks the dose ordering (30 > 11 > 3 links corrected -> 0.0043 > 0.0013 > 0.0002). The mechanism was also wrong \u2014 it is short links, not bridges."
+    },
+    {
+      "id": "mode_share",
+      "title": "Network structure does not predict WHO chooses to cycle in any transferable way",
+      "verdict": "disproven",
+      "summary": "Census 2021 travel-to-work by LSOA. Within a city the weighted network predicts cycling share well; every leave-one-city-out score is negative. The brief's three clauses have different answers.",
+      "numbers": {
+        "best_arm_pooled": 0.2802321923561316,
+        "best_arm_loco": -0.2303889060190677,
+        "unweighted_pooled": -0.0025510911081416,
+        "poi_pooled": 0.0578648248899418
+      },
+      "evidence": [
+        "k85_mode_share.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Commuting only; attributed to residence not route; 2021 census under COVID."
+    },
+    {
+      "id": "radius_robustness",
+      "title": "Do the established results survive the better radius envelope?",
+      "verdict": "city_specific",
+      "summary": "Every prior conclusion was reached with radius fixed. Re-tested the slope isolation and the architectural endpoint at 800,1600,3200.",
+      "numbers": {
+        "slope_cardiff_narrow": 0.0391055210887677,
+        "slope_bristol_narrow": 0.0233485617497824,
+        "slope_manchester_narrow": -0.0406048949740959,
+        "slope_cardiff_wide": 0.0311933611194706,
+        "slope_bristol_wide": -0.0295512800410317,
+        "slope_manchester_wide": -0.0303830771925968
+      },
+      "evidence": [
+        "k88_slope_by_radius.csv",
+        "k88_endpoint_by_radius.csv"
+      ],
+      "chapter": "4",
+      "caveat": "VERDICT FLIPS in ['bristol'] \u2014 restate."
+    },
+    {
+      "id": "pagerank_pedestrian",
+      "title": "PageRank and PT accessibility on a PEDESTRIAN network (ideas I5/I6 as worded)",
+      "verdict": "disproven",
+      "summary": "Both ideas say 'pedestrian'; both had only been tested on cycle counts. Re-tested on Cardiff's walk network against GVA.",
+      "numbers": {
+        "walk_bt_(K82_arm_D)": -0.0152491453020364,
+        "walk_pagerankandeigen": -0.0422972430325491,
+        "pt_access": -0.1017713986106739,
+        "poi": 0.3513603595610987,
+        "walk_bt_and_pagerank": -0.0237859556106397,
+        "walk_bt_and_pt": -0.0654623325602375,
+        "poi_and_walk_bt": 0.3560431034476071,
+        "poi_and_pagerank": 0.3406083128249754,
+        "poi_and_pt": 0.2939347677037623
+      },
+      "evidence": [
+        "k89_walk_pagerank_pt.csv"
+      ],
+      "chapter": "4",
+      "caveat": "GVA is a proxy for pedestrian vitality, not a pedestrian count. Cardiff only."
+    },
+    {
+      "id": "rail_usage",
+      "title": "Public transport as a modelled outcome (ORR station usage)",
+      "verdict": "disproven",
+      "summary": "The only strand addressing the third mode in the brief's title as an outcome rather than an input.",
+      "numbers": {
+        "best_pooled": -0.0400285486175591,
+        "best_loco": -0.0594939759112001,
+        "n_stations": 85
+      },
+      "evidence": [
+        "k90_rail_usage.csv"
+      ],
+      "chapter": "4",
+      "caveat": "UKRailFlows (D5) publishes only maps, not the underlying licensed O/D data. ORR station volume used instead. Small n."
+    },
+    {
+      "id": "estimator",
+      "title": "Two spatial-CV estimators are in circulation, and the better one is free",
+      "verdict": "proven",
+      "summary": "The project's historical estimator averages per-fold R2 without weighting by fold size, so a small fold counts as much as a large one. Pooled out-of-fold R2 weights implicitly by n. Switching costs nothing and buys up to 5x sensitivity.",
+      "numbers": {
+        "floor_bristol_mean_per_fold": 0.0076056212991385,
+        "floor_cardiff_mean_per_fold": 0.0242764894906811,
+        "floor_manchester_mean_per_fold": 0.004998103684117,
+        "floor_bristol_pooled_oof": 0.0044569911916572,
+        "floor_cardiff_pooled_oof": 0.0139739447840415,
+        "floor_manchester_pooled_oof": 0.0007572442969213,
+        "min_detectable_cardiff": 0.05,
+        "min_detectable_bristol": 0.01,
+        "min_detectable_manchester": 0.01
+      },
+      "evidence": [
+        "k91_noise_floor.csv"
+      ],
+      "chapter": "3",
+      "caveat": "Cardiff gains nothing \u2014 its floor is sample size, not estimator. That is the control showing the gain is real rather than universal re-scoring."
+    },
+    {
+      "id": "cardiff_limit",
+      "title": "Cardiff's detection limit is delta ~ 0.05 and no method choice changes it",
+      "verdict": "proven",
+      "summary": "Sample size, not estimator or fold geometry, sets Cardiff's floor. Subsampling Manchester and Bristol to n=149 reproduces it under pooled-OOF. This quantifies why Cardiff resolved 0 of 9 arms in the turn sweep.",
+      "numbers": {
+        "cardiff_n": 149,
+        "cardiff_floor": 0.0139739447840415,
+        "manchester_floor": 0.0007572442969213
+      },
+      "evidence": [
+        "k91_noise_floor.csv"
+      ],
+      "chapter": "3",
+      "caveat": "A registered hypothesis (fold-size artefact) was refuted by its own test; the incumbent explanation was confirmed and upgraded from assertion to evidence."
+    },
+    {
+      "id": "recovered_verdicts",
+      "title": "Six results were scored too conservatively to be seen",
+      "verdict": "proven",
+      "summary": "Recomputing every 'within floor' contrast from the networks under the better estimator \u2014 so the estimator is the only thing that changes. The runs were already done; only the scoring was conservative.",
+      "numbers": {
+        "contrasts_tested": 30,
+        "verdicts_changed": 6,
+        "clear": 6,
+        "marginal": 0,
+        "manchester_turn_resolvable_after": 8,
+        "manchester_turn_resolvable_before": 5
+      },
+      "evidence": [
+        "k94_pooled_rescore.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Changes verdicts, not effect sizes. Historical CSVs untouched. Predicting flips by re-thresholding old effects is invalid \u2014 the effect changes with the estimator."
+    },
+    {
+      "id": "slope_ladder",
+      "title": "WITHDRAWN \u2014 'Cardiff wants a steeper slope response than the default'",
+      "verdict": "withdrawn",
+      "summary": "This was measured with radii fixed at 400,800,1600 \u2014 the envelope the radius result had just shown to be sub-optimal. Re-run at 800,1600,3200 the effect reverses sign: _s=4 goes from +0.017 (better than preset) to -0.016 (worse), with both ends clear of Cardiff's noise floor. Cardiff's optimum is the preset. Superseded by slope_calibration.",
+      "numbers": {
+        "narrow_best_delta": 0.0168469620133617,
+        "wide_same_arm_delta": -0.0155833695036777,
+        "no_slope_delta_narrow": -0.065244529015452,
+        "floor": 0.013974
+      },
+      "evidence": [
+        "k96_slope_ladder.csv",
+        "k97_slope_x_radius.csv"
+      ],
+      "chapter": "4",
+      "caveat": "A correction computed in an uncorrected setting inherits the fault it is correcting. Recorded as C23. K96's CSV is untouched \u2014 it is correct for the radii it was run at, and that is the point."
+    },
+    {
+      "id": "slope_calibration",
+      "title": "sDNA's published slope calibration is too STEEP for two of three cities",
+      "verdict": "city_specific",
+      "summary": "Re-swept at the corrected radius envelope. Manchester is better with slope deterrence switched off entirely; Bristol wants roughly half the published exponent; Cardiff's optimum is the preset itself. Every deviation points the same way \u2014 no city wants it steeper. This replaces the earlier 'sub-optimal in opposite directions' reading, which was an artefact of the radius envelope.",
+      "numbers": {
+        "cardiff_optimum_s": 2.0,
+        "bristol_optimum_s": 1.5,
+        "manchester_optimum_s": 0.0,
+        "preset_s": 2.0,
+        "bristol_delta": 0.0280574655610963,
+        "manchester_delta": 0.0533981758429188,
+        "cardiff_s4_delta": -0.0155833695036777,
+        "bristol_floor": 0.004457,
+        "manchester_ratio_to_floor": 70.53920190610158
+      },
+      "evidence": [
+        "k97_slope_x_radius.csv",
+        "k102_cardiff_slope_wider.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Slope deterrence still HELPS Cardiff (+0.066 vs no slope) and Bristol (+0.011) and HURTS Manchester \u2014 that between-city disagreement is real. It is the exponent story that was radius-conditional, not the on/off story. VERIFIED AT A THIRD ENVELOPE: re-run at Cardiff's own 1600,3200,6400 the plateau is [2,4], again including the preset, and K96's 'steeper is better' does not reappear."
+    },
+    {
+      "id": "slope_correction_holds",
+      "title": "The slope restatement survives re-testing at Cardiff's own radius envelope",
+      "verdict": "proven",
+      "summary": "A correction computed in an uncorrected setting is not yet a correction. The slope ladder was measured at 400,800,1600 (wrong), re-measured at 800,1600,3200 (the pooled optimum, but not Cardiff's), and finally at 1600,3200,6400 \u2014 the widest envelope Cardiff's network can carry. The plateau includes the preset at both wider envelopes and K96's 'Cardiff wants a steeper exponent' pattern reappears at neither.",
+      "numbers": {
+        "argmax_s": 3.0,
+        "argmax_delta": 0.0015964845087445,
+        "preset_s": 2.0,
+        "floor": 0.013974,
+        "no_slope_delta_narrow": -0.065245,
+        "no_slope_delta_mid": -0.06563,
+        "no_slope_delta_widest": -0.114671693859376
+      },
+      "evidence": [
+        "k102_cardiff_slope_wider.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Also shows an interaction the factorial missed: the cost of removing slope ENTIRELY grows with the radius envelope (-0.065, -0.066, -0.115), i.e. gradient deterrence matters more the wider the catchment. Cardiff's envelope is the widest TESTABLE one, not a located optimum \u2014 the 8 km network clip bounds it."
+    },
+    {
+      "id": "slope_x_radius",
+      "title": "Slope and radius are ADDITIVE \u2014 unlike radius and attractor weighting",
+      "verdict": "proven",
+      "summary": "A 2x2 factorial of slope exponent against radius envelope. The two gains stack, where radius and attractor weighting overlapped heavily and did not. Best configuration in the project: wide radii with a per-city exponent.",
+      "numbers": {
+        "interaction_pooled": -0.0033021793488182,
+        "interaction_loco": -0.0032465727937618,
+        "slope_at_narrow_loco": 0.0140335670865479,
+        "slope_at_wide_loco": 0.010786994292786,
+        "radius_at_preset_loco": 0.0695287603080143,
+        "both_loco": 0.0803157546008003,
+        "best_pooled_r2": 0.5323351265807641,
+        "best_loco_r2": 0.4257635356685254,
+        "baseline_pooled_r2": 0.45924874372799,
+        "baseline_loco_r2": 0.345447781067725
+      },
+      "evidence": [
+        "k97_decomposition.csv",
+        "k97_factorial.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Contrast with sub_additive, where radius x weighting interacted at -0.052 LOCO. Gates: the wide preset arm reproduces the independently-built rad_high at 0.000e+00 in all three cities, and the harness reproduces 7 of K96's published narrow deltas to 6.6e-17."
+    },
+    {
+      "id": "argmax_not_optimum",
+      "title": "An argmax is not an optimum unless it clears its neighbours by more than the floor",
+      "verdict": "proven",
+      "summary": "K96 reported Cardiff's slope optimum as _s=4. Every arm from _s=3 to _s=6 sits inside Cardiff's noise floor of every other, so the 'peak' was a maximum read out of noise. The standing task to narrow that peak between 3 and 6 is therefore answered negatively \u2014 there is no resolvable peak there to narrow.",
+      "numbers": {
+        "cardiff_narrow_argmax": 4.0,
+        "cardiff_narrow_plateau_lo": 3.0,
+        "cardiff_narrow_plateau_hi": 6.0,
+        "cardiff_wide_argmax": 2.0,
+        "cardiff_wide_plateau_lo": 2.0,
+        "cardiff_wide_plateau_hi": 3.5,
+        "bristol_is_point_optimum": 1.0,
+        "cardiff_floor": 0.013974
+      },
+      "evidence": [
+        "k97_slope_x_radius.csv"
+      ],
+      "chapter": "3",
+      "caveat": "Bristol IS a point optimum at _s=1.5 \u2014 it clears every other arm by more than its 0.0045 floor. Cardiff cannot resolve one at n=149. The difference is sample size, not terrain."
+    },
+    {
+      "id": "radius_per_city",
+      "title": "The radius optimum is different in all three cities \u2014 the pooled one fits Bristol",
+      "verdict": "city_specific",
+      "summary": "The radius ladder had only ever been scored pooled and leave-one-city-out. Scored WITHIN each city on the same matched arms, all three want a different envelope, and each is a point optimum that clears every other arm by more than its own floor. 800,1600,3200 is the best TRANSFERABLE envelope \u2014 which is what LOCO and the credible interval measure \u2014 not the best for any given city except Bristol.",
+      "numbers": {
+        "cardiff_optimum_is_1600_3200_6400": 1.0,
+        "bristol_optimum_is_800_1600_3200": 1.0,
+        "manchester_optimum_is_400_800_1600": 1.0,
+        "cardiff_100_200_400": 0.1916047614431731,
+        "cardiff_200_400_800": 0.40115803744001,
+        "cardiff_400_800_1600": 0.4736323756756634,
+        "cardiff_800_1600_3200": 0.5618198119660195,
+        "cardiff_1600_3200_6400": 0.615964208955065,
+        "bristol_100_200_400": 0.2549853297250656,
+        "bristol_200_400_800": 0.3215101593332529,
+        "bristol_400_800_1600": 0.3694611014713483,
+        "bristol_800_1600_3200": 0.3974538864193356,
+        "bristol_1600_3200_6400": 0.3364473986262988,
+        "manchester_100_200_400": 0.2225685367216908,
+        "manchester_200_400_800": 0.3945936386789185,
+        "manchester_400_800_1600": 0.4372902356834121,
+        "manchester_800_1600_3200": 0.3685787741574852,
+        "manchester_1600_3200_6400": 0.3578106736185031
+      },
+      "evidence": [
+        "k99_radius_within_city.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Cardiff's optimum is BOUNDED, not located: its ladder is still rising at the widest arm the network can carry. Extent 16.4 x 16.1 km; at 6400 m the outer band already reaches a median 24.5% of the network. The 8 km clip \u2014 chosen for reasons unrelated to radius \u2014 caps a parameter later found to be first-order."
+    },
+    {
+      "id": "nqpdd_decay",
+      "title": "sDNA's one continuous decay parameter is real and mis-set \u2014 the null was diluted",
+      "verdict": "city_specific",
+      "summary": "nqpdd was recorded as a clean null. But it touches only 3 of the 9 core columns, and the null was measured on a design where the other 6 are byte-identical across every arm \u2014 two-thirds of the feature set could not respond to the parameter under test. Isolated to the columns it reaches, Bristol and Manchester both have a clean point optimum at 0.5 against sDNA's default of 1.0.",
+      "numbers": {
+        "cardiff_best_delta_isolated": 0.0,
+        "bristol_best_delta_isolated": 0.1650475775820141,
+        "manchester_best_delta_isolated": 0.1154408724267669,
+        "sdna_default": 1.0,
+        "bristol_optimum": 0.5,
+        "manchester_optimum": 0.5,
+        "max_gain_full_model": 0.0047250477551883
+      },
+      "evidence": [
+        "k100_nqpdd_isolated.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Both halves must be quoted together. About the PARAMETER: strong and mis-set. About the MODEL: tuning it still buys at most +0.005, because the NQPD family is largely redundant given the betweenness columns. The published null was right about the model and wrong about the parameter."
+    },
+    {
+      "id": "plateau_audit",
+      "title": "11 of 26 ladders in this project are plateaux, not point optima",
+      "verdict": "proven",
+      "summary": "Applying the argmax rule to every ladder. A reported optimum that does not clear its neighbours by more than the noise floor is a plateau, and reporting it as a point estimate overstates precision. Cardiff's entire eight-arm turn ladder is a single plateau; Bristol's turn optimum spans 27-215 m.",
+      "numbers": {
+        "ladders_audited": 26.0,
+        "plateaux": 11.0,
+        "point_optima": 15.0
+      },
+      "evidence": [
+        "k101_plateau_audit.csv"
+      ],
+      "chapter": "3",
+      "caveat": "The audit demotes claims, it does not demolish them: Manchester's turn optimum, all of Manchester's slope families, Bristol's slope optimum and all three cities' radius optima survive as genuine point estimates. Manchester's floor is 0.00076 and it carries most of the project's resolvable results."
+    },
+    {
+      "id": "multimodal_placebo",
+      "title": "WITHDRAWN \u2014 'the multimodal build perturbed the road network'",
+      "verdict": "withdrawn",
+      "summary": "K93's placebo compared a road network under metric=cycle against a multimodal network under metric=PUBLIC_TRANSPORT \u2014 varying network and metric together \u2014 and recorded FAIL. Holding the metric fixed, the build moves cycle-flow prediction by +0.004, inside Cardiff's floor, while the metric alone accounts for -0.126. 103% of the recorded change was the metric; -3% was the build.",
+      "numbers": {
+        "build_effect": 0.0040376362066161,
+        "metric_effect": -0.1263968206359098,
+        "recorded_placebo": -0.1223591844292936,
+        "floor": 0.013974,
+        "n": 149.0
+      },
+      "evidence": [
+        "k98_decomposition.csv",
+        "k98_multimodal_placebo.csv"
+      ],
+      "chapter": "3",
+      "caveat": "The metric-matched network needed for this test had been BUILT and never scored \u2014 it appeared in no CSV, script or result. Cardiff's detection limit is 0.05, so 'within floor' means the build's effect is below what 149 count points can resolve, not that it is zero."
+    },
+    {
+      "id": "pt_accessibility",
+      "title": "Public transport accessibility predicts cycle flow \u2014 but only at a mis-set radius",
+      "verdict": "city_specific",
+      "summary": "The original PT surface was built from a BUS feed containing zero rail, in a city whose central station handles 12.5M entries and exits a year. Rebuilt with a National Rail timetable, PT accessibility beats a 200-draw permutation null decisively at the project's old default radii \u2014 and fails at every arm at the envelope Cardiff actually wants. It was standing in for long-range network structure the model was not yet measuring.",
+      "numbers": {
+        "best_gain_narrow": 0.0615199222484977,
+        "best_pct_narrow": 100.0,
+        "best_p_narrow": 0.0,
+        "best_gain_wide": 0.005789239612137,
+        "best_pct_wide": 93.5,
+        "best_p_wide": 0.065,
+        "m0_narrow": 0.4736323756756634,
+        "m0_wide": 0.615964208955065,
+        "arms_beating_null": 3.0,
+        "arms": 12.0
+      },
+      "evidence": [
+        "k114_pt_covariate_rail.csv"
+      ],
+      "chapter": "4",
+      "caveat": "SAME SHAPE AS sub_additive: a variable looks useful only while a hyper-parameter is mis-set. Quote both envelopes or neither \u2014 reporting the narrow one alone inverts the conclusion. A registered prediction FAILED here: the 60-minute band showed the largest drop in redundancy with density and was predicted to be strongest; it was weakest."
+    },
+    {
+      "id": "pt_pedestrian_withdrawn",
+      "title": "WITHDRAWN \u2014 'PT accessibility fails on a pedestrian network too'",
+      "verdict": "withdrawn",
+      "summary": "Measured on the bus-only surface. With rail included, PT accessibility alone moves from -0.105 to -0.012, and adding it to walk betweenness now HELPS (+0.012 against walk betweenness's own -0.015). The failure was the missing mode, not the idea. Built-in control: the PT-free arms reproduce the original exactly.",
+      "numbers": {
+        "pt_alone_rail": -0.011542414080952,
+        "walk_bt_plus_pt_rail": 0.0120561412539298,
+        "walk_bt_alone": -0.0152491453020364,
+        "pt_alone_busonly": -0.102
+      },
+      "evidence": [
+        "k115_walk_pt_rail.csv"
+      ],
+      "chapter": "4",
+      "caveat": "It was C20 (no rail in the feed) that caused this, NOT C26 (the itinerary-filter defect) \u2014 the C26 fix alone moved it only -0.102 to -0.105."
+    },
+    {
+      "id": "pedestrian_radius_ladder",
+      "title": "The pedestrian null is not a radius artefact",
+      "verdict": "disproven",
+      "summary": "The Oxford pedestrian model was measured at the CYCLE radii on a walk network. Since radius is the largest lever in this project and has twice reversed a verdict, a walking-scale ladder was the obvious test. Every rung from 50 m to 3200 m is negative, and the argmax sits in a plateau with the two WIDEST arms \u2014 the signature of noise. The envelope was never the constraint for walking, unlike cycling.",
+      "numbers": {
+        "n": 43.0,
+        "floor": 0.0559553198124512,
+        "best_r2": -0.3257496960073206,
+        "worst_r2": -0.4764258377179129,
+        "rungs": 5.0
+      },
+      "evidence": [
+        "k112_pedestrian_radius_ladder.csv"
+      ],
+      "chapter": "4",
+      "caveat": "A ladder-wide null is a far stronger negative than one measured at a single inherited setting. The registered prediction was NOT TESTABLE: an argmax among arms that all fail to predict is not an optimum."
+    },
+    {
+      "id": "multimodal",
+      "title": "sDNA multimodal routing works; station-usage test is underpowered",
+      "verdict": "untested",
+      "summary": "metric=PUBLIC_TRANSPORT with a numeric linefield builds a verified multimodal network. Predicting ORR station volumes on n=26 Cardiff stations is still strongly negative on every arm \u2014 a method result, not a demand result.",
+      "numbers": {
+        "n_stations": 26,
+        "road_only_r2": -0.9375615250935272,
+        "multimodal_r2": -0.5183596187646196,
+        "vs_road_only": 0.4192019063289075
+      },
+      "evidence": [
+        "k93_multimodal.csv",
+        "k93_placebo.csv"
+      ],
+      "chapter": "3",
+      "caveat": "Fold structure is degenerate at n=26 (sd=0 across seeds). No claim about station usage can be drawn. Merging modes under metric=cycle silently corrupts road betweenness \u2014 use a mode-aware metric."
+    },
+    {
+      "id": "cycle_provision",
+      "title": "Cycle provision as routing impedance improves prediction - in Manchester",
+      "verdict": "city_specific",
+      "summary": "Cooper's idea #4 says links without cycle infrastructure should cost more. Every previous test went through computer vision and failed. OpenStreetMap tags the attribute directly. Fed into lineformula as a cost multiplier it is the largest effect in this project - but only in Manchester. Bristol is negative and Cardiff is barely above its own detection limit.",
+      "numbers": {
+        "manchester_delta": 0.1185052606175272,
+        "manchester_k": 2.0,
+        "manchester_floor": 0.000757,
+        "floor_multiple": 156.54591891351018,
+        "null_percentile": 100.0,
+        "null_draws": 199.0,
+        "null_p_exact": 0.005,
+        "null_p_floor": 0.005,
+        "reverse_direction_delta": -0.0270496920184233,
+        "bristol_delta": -0.0070507701976318,
+        "cardiff_delta": 0.0149119663734944,
+        "placebo_delta": 0.0163061167917869
+      },
+      "evidence": [
+        "k134_manchester_arms.csv",
+        "k134_manchester_perm.csv",
+        "k133_i4_direct_osm.csv",
+        "k141_hierarchy_placebo.csv"
+      ],
+      "chapter": "4",
+      "caveat": "FOUR riders travel with this number. (1) The optimum is NOT located - the ladder is still rising at its widest arm. (2) It does not replicate: Bristol negative, Cardiff 1.07x floor. (3) Leave-one-city-out looked unfavourable, but that was largely the measure's units rather than the model - see scale_transfer, where normalising betweenness for network size moves mean LOCO from -0.1430 to +0.2629 and this impedance then IMPROVES transfer. (4) Under multiplicity correction (K144/K146) the Manchester provision contrasts survive FDR at 199 draws; at forty draws they were undecidable, not refuted. See multiplicity_correction. A hierarchy-matched placebo recovers only ~14% of the effect and shows no dose-response, so it is not simply road class."
+    },
+    {
+      "id": "osm_ground_truth",
+      "title": "The cycle-infrastructure ground truth was in OpenStreetMap all along",
+      "verdict": "proven",
+      "summary": "Three rounds of computer-vision lane detection failed, and a validation gate recorded zero positives in its reference set - meaning two of its four checks were unevaluable rather than failed. The attribute was tagged in OSM the whole time, free to query, and it is what makes the provision result above possible.",
+      "numbers": {
+        "links_total": 16453.0,
+        "links_with_provision": 2255.0,
+        "pct_with_provision": 13.705707165866407
+      },
+      "evidence": [
+        "k130_osm_cycle_ground_truth.csv",
+        "k130_link_cycle_infra.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Absence of a tag is treated as absence of provision, which conflates 'none' with 'untagged'. That biases toward a null, not toward a false positive."
+    },
+    {
+      "id": "detection_geometry",
+      "title": "The cycle-lane detection failure was geometric, not a model failure",
+      "verdict": "proven",
+      "summary": "Every one of 13,264 Street View images was captured at the API defaults - field of view 90 degrees, pitch 0. Heading was carefully aligned to each link; pitch and field of view were never questioned. At those settings a frame resolves under 7 m of carriageway, so most of the road a detector is asked about is unresolvable. The detectors were performing near the ceiling the geometry allowed.",
+      "numbers": {
+        "span_current_m": 6.75,
+        "span_best_m": 15.25,
+        "best_pitch": -20.0,
+        "best_fov": 30.0,
+        "improvement_factor": 2.259259259259259
+      },
+      "evidence": [
+        "k139b_geometry_sweep.csv",
+        "k139b_pixels_on_target.csv"
+      ],
+      "chapter": "5",
+      "caveat": "A necessary-condition argument, not a sufficient one: enough pixels does not guarantee detection, but too few makes it impossible. Even at the best single-frame geometry the ceiling is about 29% of a typical link - exceeding that needs several frames per link, not a better model."
+    },
+    {
+      "id": "angular_coefficient",
+      "title": "The angular coefficient is the one preset that was already well chosen",
+      "verdict": "untested",
+      "summary": "The cycle cost function's angular term has sat at 0.2 in every run this project ever made. Sweeping it across three cities finds no value that beats the preset by more than the noise floor. After radius, slope, turn cost and provision all turned out to be mis-set, this one is not - which makes the others more credible, not less.",
+      "numbers": {
+        "best_delta": 0.0020522621121292,
+        "arms": 20.0
+      },
+      "evidence": [
+        "k140_angular_coefficient.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Raising the JUNCTION angular coefficient does help Manchester - but that is the existing turn-cost result arriving in a different coordinate, not a new one."
+    },
+    {
+      "id": "scale_transfer",
+      "title": "The model does transfer between cities - and the shape transfers almost exactly",
+      "verdict": "proven",
+      "summary": "This configuration was reported as failing to transfer: mean leave-one-city-out R2 of -0.14, Manchester at -0.61. That was a defect in this project's own code, not a property of the model - the cross-city loader renamed its columns before building the design matrix, and the routine that builds it decides whether to log-transform FROM THE COLUMN NAME, so the transform silently never fired (correction C30). Applied consistently, the configuration transfers positively to all three held-out cities. Remove the level offset and the three agree to within 0.035 - the shape of the predicted flow surface is nearly identical across networks differing threefold in size, and the entire residual gap is one calibration constant per city. Standardising predictors within each city, using no count data from the held-out city, raises the mean further.",
+      "numbers": {
+        "mean_loco_raw": 0.29691668833951784,
+        "mean_loco_scaled": 0.41497654137576934,
+        "cardiff_raw": 0.4643614900865906,
+        "cardiff_scaled": 0.3662705791095683,
+        "bristol_raw": 0.3023685158021604,
+        "bristol_scaled": 0.3812747641168873,
+        "manchester_raw": 0.1240200591298025,
+        "manchester_scaled": 0.4973842809008525,
+        "best_transfer_k": 2.0,
+        "best_transfer_r2": 0.45042128764038375
+      },
+      "evidence": [
+        "k143_scale_normalised_transfer.csv",
+        "k142_loco_decomposition.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Do NOT describe this as reversing a failed transfer - that framing was itself the artefact (C30). The baseline already transfers once the predictors carry this project's own standard transform. Normalising improves it further. The k=1 interior optimum previously claimed is WITHDRAWN: the normalised ladder rises monotonically to the end of its range. This is NOT a per-city intercept - it uses only the held-out city's predictor distribution, which exists for any network before a single count is collected, so the transfer stays blind in the target. And Cardiff gets WORSE under it: normalising helps the cities whose scale least resembled their training set and costs the one that already matched. Quote the per-city rows, not the mean alone."
+    },
+    {
+      "id": "multiplicity_correction",
+      "title": "Under multiplicity correction, two permutation-null claims survive",
+      "verdict": "proven",
+      "summary": "Over a hundred stated claims, many carrying a permutation percentile, is a multiple-comparisons problem this project had never formally addressed. Benjamini-Hochberg was run across a family declared BEFORE any p-value was computed. At forty draws the family returned zero survivors because several tests sat on their permutation p-floor above the corrected threshold \u2014 undecidable, not refuted. K146 re-ran the Manchester nulls to 199 draws; both provision contrasts now clear FDR. One densifier test remains arithmetically incapable of passing at its current draw count.",
+      "numbers": {
+        "family_size": 6.0,
+        "n_survive": 2.0,
+        "n_undecidable": 1.0,
+        "alpha": 0.05,
+        "top_p": 0.005,
+        "top_p_floor": 0.005,
+        "top_bh_threshold": 0.0083333333333333,
+        "top_draws": 199.0,
+        "draws_needed": 119.0
+      },
+      "evidence": [
+        "k144_fdr_across_nulls.csv"
+      ],
+      "chapter": "3",
+      "caveat": "Do NOT render survivors as 'everything passed' or non-survivors as 'disproven'. Ranks 1\u20132 (Manchester provision) survive after 199 draws. Cardiff provision and the near-null densifiers do not. One test is still undecidable at this correction. The family was deliberately NOT re-drawn afterwards to improve the outcome."
+    },
+    {
+      "id": "transfer_law",
+      "title": "Ranking transfers at two cities; scale barely does at eleven",
+      "verdict": "proven",
+      "summary": "On twelve self-contained UK cities (London boroughs out), fit on k cities and predict a held-out one. Mean held-out r\u00b2 is already +0.31 at k=2 and plateaus; mean held-out R\u00b2 rises only to +0.03. A shuffled-city null sits below the real r\u00b2 at every k. Westminster is a contrast, not in this working set.",
+      "numbers": {
+        "r2_corr_k2": 0.30613841571712,
+        "r2_det_k2": -0.0852789930591759,
+        "r2_corr_k11": 0.3216565548633204,
+        "r2_det_k11": 0.0325206587797852,
+        "null_r2_corr_k2": 0.2156292973303174,
+        "p_r2_corr_k2": 0.01,
+        "n_cities": 12.0
+      },
+      "evidence": [
+        "k173_curve.csv",
+        "k173_loco11.csv",
+        "k173_note.md"
+      ],
+      "chapter": "4",
+      "caveat": "Quote R\u00b2 and r\u00b2 together. Mean R\u00b2 +0.03 includes Rotherham (\u22121.35), a level penalty with r\u00b2 still +0.22 \u2014 do not drop it from the mean. Do not quote this as 'models do not transfer'."
+    },
+    {
+      "id": "local_intercept",
+      "title": "Shared slopes transfer; the missing piece is a local intercept",
+      "verdict": "proven",
+      "summary": "Ten local counts, intercept only, slopes frozen from the other eleven cities, raise mean held-out R\u00b2 from +0.03 to +0.21. Knowing the held-out mean entirely is an upper bound of +0.28. Transferred r\u00b2 beats most cities' own within-city r\u00b2. log(n)+span is not a substitute intercept.",
+      "numbers": {
+        "prior_r2": 0.03252065877978521,
+        "local10_r2": 0.2081641402014206,
+        "oracle_r2": 0.2800489288781991,
+        "cov_r2": 0.10684993889645782,
+        "local10_r2_corr": 0.32009844589694253,
+        "within_r2_corr": 0.23913836213833115,
+        "n_local": 10.0
+      },
+      "evidence": [
+        "k172_loco.csv",
+        "k172_pooled.csv",
+        "k172_note.md"
+      ],
+      "chapter": "4",
+      "caveat": "Do NOT quote pooled city-FE R\u00b2 +0.37 as transfer \u2014 that is in-sample city means. local10 is not uniformly better (hurts cities whose prior level penalty was already small). Rotherham stays in every mean."
+    },
+    {
+      "id": "radius_twelve",
+      "title": "At 12 cities the transferable radius envelope is still 800/1600/3200",
+      "verdict": "city_specific",
+      "summary": "Leave-one-city-out r\u00b2 still peaks at 800,1600,3200. Within a city the winner is not the same envelope: four cities want 400/800/1600, three the middle, five 1600/3200/6400. Mean LOCO R\u00b2 would pick the wide arm; that was not the declared tie-break (r\u00b2 was).",
+      "numbers": {
+        "loco_r2_corr_narrow": 0.3003224731267535,
+        "loco_r2_corr_baseline": 0.32165655486332034,
+        "loco_r2_corr_wide": 0.3190333973360545,
+        "loco_r2_det_narrow": 0.007861518737442242,
+        "loco_r2_det_baseline": 0.03252065877978521,
+        "loco_r2_det_wide": 0.03882857333404642,
+        "n_cities_narrow_wins": 4.0,
+        "n_cities_baseline_wins": 3.0,
+        "n_cities_wide_wins": 5.0
+      },
+      "evidence": [
+        "k174_loco.csv",
+        "k174_within.csv",
+        "k174_note.md"
+      ],
+      "chapter": "4",
+      "caveat": "Quote r\u00b2 and R\u00b2 together. Do not say 'wide wins'. This restates radius_per_city at twelve cities; the transferable envelope is unchanged from the three-city K80."
+    },
+    {
+      "id": "match_analytical",
+      "title": "Hybrid radius (MATCH_ANALYTICAL) is not a free upgrade",
+      "verdict": "harmful",
+      "summary": "Same K170 lineformula and uniform AADT; only radmetric=MATCH_ANALYTICAL instead of the Euclidean default. Cardiff R\u00b2 falls from +0.550 to +0.471. Bristol falls. Manchester moves +0.002. Working arms stay Euclidean-radius.",
+      "numbers": {
+        "cardiff_r2": 0.4711219824182488,
+        "cardiff_euclid": 0.5501564746481119,
+        "cardiff_delta": -0.079034492229863,
+        "bristol_delta": -0.0384388121086688,
+        "manchester_delta": 0.0018780610663269
+      },
+      "evidence": [
+        "k175_match_analytical.csv",
+        "k175_match_analytical_note.md"
+      ],
+      "chapter": "4",
+      "caveat": "Do not quote the 3-city LOCO mean as a spec change (Bristol goes the other way). This is the hybrid radius Cooper 2017 named; it hurt on this nine-column arm."
+    },
+    {
+      "id": "sdnalearn",
+      "title": "sDNA Learn on nine columns does not close the published 0.854",
+      "verdict": "proven",
+      "summary": "The same Cardiff K170 arm through sdnalearn (ridge, Box-Cox target, weight lambda 0.7) gives regularized out-of-sample R\u00b2 +0.489 against this project's spatial Ridge +0.550. Chan & Cooper 0.854 is still a richer model. Learn's CV is not spatially blocked.",
+      "numbers": {
+        "learn_xval_r2": 0.489,
+        "ridge_r2_det": 0.5501564746477167,
+        "learn_geh_mean": 1.54,
+        "ridge_geh_mean": 1.585986158720866
+      },
+      "evidence": [
+        "k176_sdnalearn.csv",
+        "k176_sdnalearn_note.md"
+      ],
+      "chapter": "3",
+      "caveat": "Comparison, not a better fit. Do not lead with GEH percent below 5: hourly AADT/24 makes that threshold easy."
+    },
+    {
+      "id": "roadonly_routing",
+      "title": "Dropping traffic-free from the routing graph is not a new spec",
+      "verdict": "suggestive",
+      "summary": "Keep carriageways only on the existing bike extract (one node space). Cardiff gate PASS (giant 0.999). R\u00b2 +0.565 against full-bike +0.550. Delta sits on Cardiff's floor. A naive merge of two OSMnx graphs remains FAIL.",
+      "numbers": {
+        "r2_det": 0.5648419141033707,
+        "full_bike_r2": 0.5501564746481119,
+        "delta_vs_bike": 0.0146854394552587,
+        "floor": 0.013974,
+        "giant_frac": 0.999
+      },
+      "evidence": [
+        "p111_roadonly.csv",
+        "p111_roadonly_note.md"
+      ],
+      "chapter": "6",
+      "caveat": "Closes 'off-road routes vs extra links'. Not a new spec. Bristol not run."
+    },
+    {
+      "id": "intervals",
+      "title": "The three headline claims now carry intervals",
+      "verdict": "proven",
+      "summary": "K172, K173 and K174 each selected a verdict by ranking means over twelve held-out cities, and a rule that ranks means needs no interval in order to execute - so none was computed. A paired bootstrap over cities (20,000 draws) plus an exact sign test supplies them. Two headline claims changed as a result: the radius envelope is a tie rather than a win, and the local-intercept gain is real on average but not uniform across cities.",
+      "numbers": {
+        "radius_vs_wide_mean": 0.0026231575272658,
+        "radius_vs_wide_lo": -0.0118915308692652,
+        "radius_vs_wide_hi": 0.0173790938526808,
+        "radius_vs_narrow_mean": 0.0213340817365669,
+        "radius_vs_narrow_lo": 0.0120213289740312,
+        "kcurve_k11_minus_k2": 0.0155181391462003,
+        "local10_minus_prior": 0.1756434814216353,
+        "local10_cities_improved": 7.0
+      },
+      "evidence": [
+        "k181_intervals.csv",
+        "k181_radius_percity.csv"
+      ],
+      "chapter": "4",
+      "caveat": "The local intercept improves only 7 of 12 cities, but the per-city gain tracks the level penalty it removes at corr = 0.997 - predictable, not a lottery. Largest in Rotherham (+1.299, level penalty 1.453); slightly negative in the five cities with almost no level error to correct."
+    },
+    {
+      "id": "counted_only",
+      "title": "The transferability law is stronger on DfT's observed counts",
+      "verdict": "proven",
+      "summary": "Only 44.9 % of the snapped count points (1,049 of 2,334) are recorded by DfT as Counted; the rest are its own modelled estimates. Re-running the whole transfer analysis on the observed points alone - with a replication gate confirming the full-sample arm reproduces the published curve exactly - improves every headline. Nothing in the results depends on the modelled half of the target.",
+      "numbers": {
+        "pct_counted": 44.9,
+        "n_counted": 1049,
+        "n_total": 2334,
+        "r2_k2_all": 0.3061384157171253,
+        "r2_k2_counted": 0.3574191365157214,
+        "r2_k11_all": 0.3216565548633201,
+        "r2_k11_counted": 0.3791882544348802,
+        "R2_k11_all": 0.0325206587798192,
+        "R2_k11_counted": 0.1199776070060336
+      },
+      "evidence": [
+        "k182_curve.csv",
+        "k182_split.csv",
+        "k182_gate.json"
+      ],
+      "chapter": "4",
+      "caveat": "Two things do change: the plateau starts one city later (k*=3), and the radius verdict flips to the WIDE envelope in 11 of 12 cities (sign p=0.006)."
+    },
+    {
+      "id": "traffic_term",
+      "title": "The traffic term is identifiable, and it hurts",
+      "verdict": "disproven",
+      "summary": "This project pinned AADT uniform, making the traffic exponent a no-op, and for a time described it as structurally unidentifiable. That was withdrawn: Chan & Cooper's own Model 1 assigns a median AADT per road class, and the code to do it had been in the repository since day two without ever being run. Built and run across twelve cities the traffic field is real - the cost multiplier spans 1.03 to 23.5 - and it makes transfer worse.",
+      "numbers": {
+        "baseline_mean": 0.32165655486332034,
+        "roadclass_mean": 0.24502268476794606,
+        "delta": -0.07663387009537431,
+        "cities_better": 1,
+        "n_cities": 12
+      },
+      "evidence": [
+        "k184_loco.csv",
+        "k184_build.csv",
+        "k184_classes.csv"
+      ],
+      "chapter": "4",
+      "caveat": "Departures from Model 1: plain median rather than length-weighted, and OSMnx composite highway strings give 12-15 classes per city against their eight."
+    },
+    {
+      "id": "noise_floor",
+      "title": "The noise floor was one draw of a random quantity",
+      "verdict": "proven",
+      "summary": "Effects in this project are quoted as multiples of a per-city noise floor. That floor was the absolute mean of PAIRED differences between one pair of identical sDNA runs - the pairing cancels fold variance, and an absolute mean is a location statistic where the question is an upper quantile. Several more replicate pairs were already on disk. Rebuilt as the 95th percentile of the difference distribution, the conclusions hold and the multiples shrink.",
+      "numbers": {
+        "cardiff_published": 0.0139739447840415,
+        "cardiff_rebuilt": 0.0158354108131689,
+        "bristol_published": 0.0044569911916572,
+        "bristol_rebuilt": 0.0107964003864008,
+        "manchester_published": 0.0007572442969213,
+        "manchester_rebuilt": 0.0056056516211528,
+        "manchester_factor": 7.402699028494733
+      },
+      "evidence": [
+        "k185_floors.csv",
+        "k185_ratios.csv",
+        "k185_floor_cells.csv"
+      ],
+      "chapter": "3",
+      "caveat": "Manchester's floor was 7.4x too small - cancellation, not precision. Slope effect restated 70x to 9.5x, provision 156x to 21x, single-predictor baseline 155x to 21x; all still clear. Two marginal Cardiff claims (cycle provision, road-only routing) move from just outside the floor to just inside it and are now unresolvable."
+    },
+    {
+      "id": "duplicate_points",
+      "title": "Coincident count points exist, and are harmless",
+      "verdict": "disproven",
+      "summary": "DfT publishes more than one count point at the same coordinate, and the snapping deduplicated on point id only - so identical predictor rows entered the model more than once. Deduplication was declared primary before scoring, on the ground that one location with one predictor set is one observation whatever it scores. It barely moves anything.",
+      "numbers": {
+        "rows_coincident": 57,
+        "n_total": 2334,
+        "pct": 2.4,
+        "cardiff_pct": 8.1
+      },
+      "evidence": [
+        "k186_inventory.csv",
+        "k186_curve.csv",
+        "k186_ceiling.csv"
+      ],
+      "chapter": "3",
+      "caveat": "k=2 mean held-out r2 +0.3061 to +0.3046, and the local intercept IMPROVES +0.2082 to +0.2149. The irreducible-error ceiling from disagreeing pairs is under 1.3 %, nowhere near binding."
+    },
+    {
+      "id": "selection_audit",
+      "title": "Two headline configurations are argmaxes, and one margin is selection",
+      "verdict": "proven",
+      "summary": "The multiplicity correction in the methods chapter governs six declared tests. It does not govern the configuration search those tests were run on top of: 747 arm labels across 78 result files. Permuting arm labels within each city - holding city difficulty fixed and removing only the arm signal - gives the distribution of a winner's margin when nothing is genuinely better.",
+      "numbers": {
+        "arm_labels": 747,
+        "files_with_arms": 78,
+        "radius_gap": 0.0079857464212775,
+        "radius_null_p95": 0.0101452243105958,
+        "radius_p": 0.1455708858228354,
+        "slope_gap": 0.0098612106390764,
+        "slope_p": 0.026994601079784
+      },
+      "evidence": [
+        "k187_families.csv",
+        "k187_pairwise.csv",
+        "k187_arm_inventory.csv"
+      ],
+      "chapter": "3",
+      "caveat": "The radius margin is INSIDE what selection alone produces (p=0.146), agreeing with the interval analysis from a different instrument. The slope family is genuinely separable (p=0.027) and its winner is the shipped CYCLE preset, not the s=2 this project adopted - CYCLE beats s=2 by +0.0325 in 11 of 12 cities."
+    },
+    {
+      "id": "blocking",
+      "title": "The spatial blocking is conservative, and buffering is unnecessary",
+      "verdict": "proven",
+      "summary": "The design uses five KMeans blocks held out whole, with the block count equal to the fold count - so it is leave-one-cluster-out, and five was inherited rather than justified. Both canonical recommendations in the spatial-validation literature were tested. Block size turns out to match the measured autocorrelation range, buffering between train and test costs almost nothing, and the inherited block count is the most conservative of those tried.",
+      "numbers": {
+        "k3": 0.14968321232510162,
+        "k5": 0.19520499032943436,
+        "k8": 0.22348426343435498,
+        "k10": 0.24433146141661735,
+        "buffer_0": 0.19520499032943436,
+        "buffer_250": 0.19450228769061154,
+        "buffer_500": 0.1915315970074241
+      },
+      "evidence": [
+        "k188_k_grid.csv",
+        "k188_buffered.csv",
+        "k188_autocorr_range.csv",
+        "k188_leakage.csv"
+      ],
+      "chapter": "3",
+      "caveat": "Target autocorrelation runs to 4-8 km and the blocks span 3.4-9.4 km. Of 107 point pairs within 50 m across the twelve, none fall in different folds. A 250 m buffer costs 0.0007. More blocks would RAISE every reported figure."
+    },
+    {
+      "id": "diagnostics_twelve",
+      "title": "Residual diagnostics at twelve cities, including three that misbehave",
+      "verdict": "city_specific",
+      "summary": "The residual and collinearity diagnostics had only ever been run on the original three cities. Re-run on the working twelve they are less comfortable: in three cities the model leaves more spatial structure than the target had, the error magnitude clusters geographically in two more, and collinearity is worse than the three-city figures suggested.",
+      "numbers": {
+        "cities_resid_above_target": 3,
+        "vif_max": 353.78111746680173,
+        "vif_min_of_max": 95.82934642513897,
+        "alpha_span_max": 325.7020655659786,
+        "abs_resid_max": 0.3956628486474585
+      },
+      "evidence": [
+        "k189_diagnostics.csv"
+      ],
+      "chapter": "3",
+      "caveat": "Birmingham, Sheffield and Rotherham leave more spatial structure than their target had. Absolute-residual Moran's I reaches +0.396 in Nottingham and +0.275 in Bristol - spatially structured heteroscedasticity, computed by the original script and never reported. RidgeCV's penalty varies up to 326x across folds of one partition."
+    },
+    {
+      "id": "baseline_family",
+      "title": "Every headline margin re-scored against four different baselines",
+      "verdict": "proven",
+      "summary": "A margin is only as trustworthy as the baseline it is measured against, and an earlier three-city audit had found a single predictor beating the standard nine-column baseline. Re-run across the working twelve, the nine-column baseline is the strongest of a four-member family, and every headline arm keeps its sign against all four.",
+      "numbers": {
+        "core9": 0.3216565548633204,
+        "best_single": 0.2931137981727789,
+        "bt3": 0.3132996071200448,
+        "core6": 0.3097766591871833,
+        "sign_stable_arms": 4
+      },
+      "evidence": [
+        "k196_baseline_loco.csv",
+        "k196_baseline_summary.csv"
+      ],
+      "chapter": "3",
+      "caveat": "Collinearity at twelve cities is worse than the three-city figures suggested (max VIF 354), which is why this check was run rather than assumed."
+    },
+    {
+      "id": "traffic_published_values",
+      "title": "The traffic term still hurts using Chan and Cooper's own published values",
+      "verdict": "harmful",
+      "summary": "Our first test of the traffic term built its own field from measured vehicle counts, which reaches values far above anything in the published method. So we rebuilt it three ways, including using Chan and Cooper's published per-class values exactly as printed. All three cost held-out accuracy, in eleven of twelve cities each.",
+      "numbers": {
+        "baseline": 0.32165655486332034,
+        "published": 0.2689170245827438,
+        "measured": 0.24502268476794606,
+        "measured_minn": 0.23680324858909893,
+        "delta_published": -0.052739530280576576,
+        "delta_measured": -0.07663387009537431,
+        "cities_improved": 1
+      },
+      "evidence": [
+        "k196b_loco.csv",
+        "k196b_build.csv"
+      ],
+      "chapter": "4",
+      "caveat": "The one city that improves under the published values is Cardiff - the city those values were originally fitted on. That is a transferability finding in itself."
+    },
+    {
+      "id": "continuous_space",
+      "title": "Continuous-space analysis cannot be combined with the banded radii we rely on",
+      "verdict": "untested",
+      "summary": "One option we had set aside was continuous-space analysis. Revisiting the reason, it was wrong - so we tested it. sDNA turns out to refuse the combination outright: continuous space cannot be used with the banded radii that make our distance-decay result possible in the first place. Where it can run, it helps a great deal at walking distances and does nothing at cycling distances.",
+      "numbers": {
+        "effect_100_200_400": 0.063641031903164,
+        "effect_200_400_800": 0.0356610607991443,
+        "effect_400_800_1600": 0.000197277029834,
+        "effect_800_1600_3200": -0.0047250541584346,
+        "cardiff_noise_floor": 0.015835
+      },
+      "evidence": [
+        "k198_probe.csv",
+        "k198_cont.csv"
+      ],
+      "chapter": "6",
+      "caveat": "The rung ordering is unchanged, so continuous space does not reorder the radius ladder and the radius result does not depend on the discrete-space assumption. These are cumulative arms, not the banded ones the headline uses."
+    },
+    {
+      "id": "census_od_weights",
+      "title": "Real census commuting flows do not beat the link-density proxy",
+      "verdict": "disproven",
+      "summary": "The last untested idea was to feed the model real origin-destination commuting flows from the census, instead of using street density as a proxy for where people want to go. We built it for Cardiff. It does not help - and it costs a whole family of measures, because replacing destination weights leaves two-phase betweenness undefined.",
+      "numbers": {
+        "baseline_matched": 0.5270248371282025,
+        "odmatrix_matched": 0.5010517060700398,
+        "baseline_full": 0.5627143108386153,
+        "effect": -0.02597313105816268,
+        "cardiff_noise_floor": 0.015835
+      },
+      "evidence": [
+        "k200_odmatrix.csv"
+      ],
+      "chapter": "6",
+      "caveat": "The flows are 2011 against a 2019+ count window - the 2021 census equivalent is a restricted release - and they are bicycle commuting against all-purpose counts. Both work against the arm, so this is not proof that census demand cannot help."
+    },
+    {
+      "id": "directed_traffic",
+      "title": "The traffic term still hurts on a network with one-way streets restored",
+      "verdict": "harmful",
+      "summary": "A reviewer could object that we tested the traffic term on a network with no one-way restrictions, which is exactly what the published method says a vehicle model needs. So Cardiff was rebuilt with every one-way restriction in place and tested again, as a two-by-two so the network and the traffic term are separately identified. The traffic term costs accuracy on both networks.",
+      "numbers": {
+        "undirected_uniform": 0.5501564746481119,
+        "undirected_measured": 0.3947096975622809,
+        "directed_uniform": 0.4524272963708601,
+        "directed_measured": 0.4134669351930441,
+        "effect_undirected": -0.155446777085831,
+        "effect_directed": -0.03896036117781598
+      },
+      "evidence": [
+        "k199_cells.csv",
+        "k199_note.md"
+      ],
+      "chapter": "6",
+      "caveat": "The damage is about four times smaller on the directed network, which is the direction the published method would predict - and the directed rebuild is itself a worse predictor of cycling at baseline. One city, single-city cross-validation; this closes an objection rather than adding a transfer result."
+    },
+    {
+      "id": "bidirectional_identity",
+      "title": "Directional betweenness turned out to be an identity, not a rival",
+      "verdict": "disproven",
+      "summary": "Bidirectional betweenness had been rejected twice, and neither test was fair - one accidentally scored three columns instead of fifteen, the other compared fifteen columns against nine. Scored properly at matched nine, the question dissolves: forward plus backward betweenness reproduces the undirected measure exactly. On a network without one-way restrictions there is no directional information to find.",
+      "numbers": {
+        "lineage_pearson_r": 0.9999999999999996,
+        "sum_minus_baseline_max": 3.939321979729016e-09,
+        "cities": 3,
+        "best_directional_margin": -0.013735846222568201,
+        "ninecol_beats_fifteencol": 3
+      },
+      "evidence": [
+        "k197_matched.csv",
+        "k197_lineage.csv"
+      ],
+      "chapter": "6",
+      "caveat": "This is a stronger answer than a score comparison, because an arithmetic identity holds at any sample size. It also relocates the open question to the network builder, which collapses one-way restrictions before the analysis sees them."
+    }
+  ],
+  "result_files": [
+    "k100_nqpdd_isolated.csv",
+    "k101_plateau_audit.csv",
+    "k102_cardiff_slope_wider.csv",
+    "k103_cv_flow_rescore.csv",
+    "k105_streetview_manifest.csv",
+    "k106_count_point_streetview.csv",
+    "k106_pre_residual_cv_overlap.csv",
+    "k106c_count_point_features.csv",
+    "k106c_image_detections.csv",
+    "k106d_cv_flow_rescore.csv",
+    "k107_network_streetview.csv",
+    "k108_detections.csv",
+    "k108_eye_sample.csv",
+    "k108_link_cycleinfra.csv",
+    "k111_rail_preflight.csv",
+    "k112_pedestrian_radius_ladder.csv",
+    "k114_pt_covariate_rail.csv",
+    "k115_walk_pt_busv2.csv",
+    "k115_walk_pt_rail.csv",
+    "k120_cv_impedance_perm.csv",
+    "k120_cv_impedance_proof.csv",
+    "k120_link_cv_join.csv",
+    "k121_image_cv.csv",
+    "k121_link_cv.csv",
+    "k122_cv_lineformula.csv",
+    "k122_cv_lineformula_perm.csv",
+    "k123_sdna_guided_refill.csv",
+    "k124_cv_envelopes.csv",
+    "k124_cv_envelopes_arms_backup.csv",
+    "k124_cv_envelopes_perm.csv",
+    "k125_cv_coverage_sensitivity.csv",
+    "k129_cv_aadt_preflight.csv",
+    "k130_link_cycle_infra.csv",
+    "k130_osm_cycle_ground_truth.csv",
+    "k131_k108_retrofit_validation.csv",
+    "k132_threshold_sweep.csv",
+    "k133_i4_direct_osm.csv",
+    "k133_i4_direct_osm_arms_backup.csv",
+    "k133_i4_direct_osm_perm.csv",
+    "k134_bristol_arms.csv",
+    "k134_bristol_cycle_infra.csv",
+    "k134_bristol_perm_singledir_SUPERSEDED.csv",
+    "k134_manchester_arms.csv",
+    "k134_manchester_cycle_infra.csv",
+    "k134_manchester_perm.csv",
+    "k135_i4_loco.csv",
+    "k135_i4_loco_contrast.csv",
+    "k136_sample_dryrun.csv",
+    "k136_vlm_detections.csv",
+    "k136_vlm_detections_conservative.csv",
+    "k136_vlm_detections_neutral.csv",
+    "k137_blind_sample.csv",
+    "k137_claude_labels.csv",
+    "k137_three_way.csv",
+    "k137_truth_sealed.csv",
+    "k138_imagery_age.csv",
+    "k139b_geometry_sweep.csv",
+    "k139b_pixels_on_target.csv",
+    "k140_angular_coefficient.csv",
+    "k141_hierarchy_placebo.csv",
+    "k142_loco_decomposition.csv",
+    "k143_scale_normalised_transfer.csv",
+    "k144_fdr_across_nulls.csv",
+    "k147_convention_loco.csv",
+    "k147_convention_sweep.csv",
+    "k148_convention_floors.csv",
+    "k149_convention_ladder.csv",
+    "k149_headline_verdicts.csv",
+    "k152_roadclass_aadt.csv",
+    "k152_roadclass_traffic.csv",
+    "k152b_traffic_placebo.csv",
+    "k154_ensemble.csv",
+    "k154_ensemble_columns.csv",
+    "k157_bike_network.csv",
+    "k157_bike_network_bristol.csv",
+    "k157_bike_network_manchester.csv",
+    "k157b_bike_arms.csv",
+    "k157b_bike_arms_bristol.csv",
+    "k157b_bike_arms_manchester.csv",
+    "k157c_roadonly_bristol.csv",
+    "k157c_roadonly_cardiff.csv",
+    "k157c_roadonly_manchester.csv",
+    "k160_collinearity.csv",
+    "k160_naive_baselines.csv",
+    "k160_residual_diagnostics.csv",
+    "k163_baseline_sensitivity.csv",
+    "k164_path_consistency.csv",
+    "k165_tail_calibration.csv",
+    "k165_target_skew.csv",
+    "k166_measure_families.csv",
+    "k167_dem_gate.csv",
+    "k167_eudem_bristol.csv",
+    "k167_eudem_cardiff.csv",
+    "k167_eudem_manchester.csv",
+    "k167_grad_opendem_manchester_bilinear.csv",
+    "k167_grad_opendem_manchester_nearest.csv",
+    "k169_eudem_reproduction.csv",
+    "k170_build_birmingham.csv",
+    "k170_build_edinburgh.csv",
+    "k170_build_gate.csv",
+    "k170_build_glasgow.csv",
+    "k170_build_liverpool.csv",
+    "k170_build_nottingham.csv",
+    "k170_build_rotherham.csv",
+    "k170_build_sheffield.csv",
+    "k170_build_wakefield.csv",
+    "k170_build_westminster.csv",
+    "k170_build_westminster_m6.csv",
+    "k170_build_wigan.csv",
+    "k170_city_selection.csv",
+    "k170_s2.csv",
+    "k170b_decompose.csv",
+    "k171_ladder.csv",
+    "k171_loco_published_s.csv",
+    "k171_loco_s0_prov.csv",
+    "k171_loco_t0_a0.csv",
+    "k172_coefs.csv",
+    "k172_loco.csv",
+    "k172_n_sweep.csv",
+    "k172_pooled.csv",
+    "k172_sample_rule.csv",
+    "k173_curve.csv",
+    "k173_held.csv",
+    "k173_jackknife.csv",
+    "k173_jackknife_summary.csv",
+    "k173_loco11.csv",
+    "k173_noz.csv",
+    "k173_random_spatial.csv",
+    "k173_within.csv",
+    "k173_zeros.csv",
+    "k173_zscore_arms.csv",
+    "k174_local_int.csv",
+    "k174_loco.csv",
+    "k174_within.csv",
+    "k175_match_analytical.csv",
+    "k175_match_analytical_loco.csv",
+    "k176_sdnalearn.csv",
+    "k177_leaderboard.csv",
+    "k177_state.csv",
+    "k178_leaderboard.csv",
+    "k178_state.csv",
+    "k179_estimators.csv",
+    "k179_leaderboard.csv",
+    "k179_learn.csv",
+    "k179_perm.csv",
+    "k179_perm_200.csv",
+    "k179_s3_build.csv",
+    "k179_s3_lite_loco.csv",
+    "k179_sdna.csv",
+    "k179_state.csv",
+    "k179_tf_snap.csv",
+    "k180_geh.csv",
+    "k180_inventory.csv",
+    "k180_s_curve.csv",
+    "k180_s_held.csv",
+    "k180_univariate.csv",
+    "k180_univariate_held.csv",
+    "k181_intervals.csv",
+    "k181_radius_percity.csv",
+    "k182_curve.csv",
+    "k182_held.csv",
+    "k182_local.csv",
+    "k182_radius.csv",
+    "k182_split.csv",
+    "k184_build.csv",
+    "k184_classes.csv",
+    "k184_loco.csv",
+    "k185_floor_cells.csv",
+    "k185_floors.csv",
+    "k185_ratios.csv",
+    "k186_ceiling.csv",
+    "k186_curve.csv",
+    "k186_inventory.csv",
+    "k186_local.csv",
+    "k186_radius.csv",
+    "k187_arm_inventory.csv",
+    "k187_families.csv",
+    "k187_pairwise.csv",
+    "k188_autocorr_range.csv",
+    "k188_buffered.csv",
+    "k188_k_grid.csv",
+    "k188_leakage.csv",
+    "k189_diagnostics.csv",
+    "k18_mapillary_coverage.csv",
+    "k191_loco17.csv",
+    "k191_pairwise17.csv",
+    "k192_spec_grid.csv",
+    "k192_spec_held.csv",
+    "k193_mapillary_points.csv",
+    "k194_clusters.csv",
+    "k194_comparison.csv",
+    "k195_curve.csv",
+    "k195_radius.csv",
+    "k195_subset_counts.csv",
+    "k196_baseline_loco.csv",
+    "k196_baseline_summary.csv",
+    "k196b_build.csv",
+    "k196b_loco.csv",
+    "k197_lineage.csv",
+    "k197_matched.csv",
+    "k198_cont.csv",
+    "k198_probe.csv",
+    "k199_cells.csv",
+    "k200_odmatrix.csv",
+    "k36_oxford_ped_target.csv",
+    "k36_pedestrian_scores.csv",
+    "k36_pedestrian_scores_nqpd.csv",
+    "k36_pooled_oof.csv",
+    "k36_step0_authorities.csv",
+    "k36_step0_sensors.csv",
+    "k53_randomisation_scores.csv",
+    "k55_morans_i_cardiff.csv",
+    "k55_morans_i_manchester.csv",
+    "k55_null_cardiff.csv",
+    "k55_null_manchester.csv",
+    "k55b_absorption_null.csv",
+    "k56_hurdle_model.csv",
+    "k57_raw_perfold.csv",
+    "k58_manchester_controls.csv",
+    "k58_slope_perfold.csv",
+    "k58_slope_summary.csv",
+    "k59_catchment_covariate.csv",
+    "k59_ladder_stage2_canonical.csv",
+    "k59_ladder_summary.csv",
+    "k59_ladder_summary_clean.csv",
+    "k66_false_negative_audit.csv",
+    "k67_slope_counted.csv",
+    "k69_counted_sensitivity.csv",
+    "k70_slope_by_roadclass.csv",
+    "k72_endpoint_by_roadclass.csv",
+    "k73_pooled_loco.csv",
+    "k73_pooled_summary.csv",
+    "k76_confirmatory.csv",
+    "k76_dropped.csv",
+    "k76_duplicates.csv",
+    "k76_families.csv",
+    "k76_loco.csv",
+    "k76_pooled_summary.csv",
+    "k76_rank_stability.csv",
+    "k78_oxford_bike_target.csv",
+    "k78_oxford_cycle_scores.csv",
+    "k80_decay_curve.csv",
+    "k80_radius_loco.csv",
+    "k80_radius_pooled.csv",
+    "k80b_decomposition.csv",
+    "k80b_factorial.csv",
+    "k81_turn_sweep.csv",
+    "k81c_turn_k170.csv",
+    "k82_gva_contrasts.csv",
+    "k82_gva_walk.csv",
+    "k83_dose_bristol.csv",
+    "k83_dose_bristol_ext20.csv",
+    "k83_dose_bristol_short10.csv",
+    "k83_dose_cardiff_ext20.csv",
+    "k83_dose_cardiff_short10.csv",
+    "k83_dose_manchester_ext20.csv",
+    "k83_dose_manchester_short10.csv",
+    "k83_elevation_perfold.csv",
+    "k83_elevation_slope.csv",
+    "k84_posterior.csv",
+    "k85_mode_share.csv",
+    "k88_endpoint_by_radius.csv",
+    "k88_slope_by_radius.csv",
+    "k89_walk_pagerank_pt.csv",
+    "k90_rail_usage.csv",
+    "k91_noise_floor.csv",
+    "k93_multimodal.csv",
+    "k93_placebo.csv",
+    "k94_pooled_rescore.csv",
+    "k96_slope_ladder.csv",
+    "k97_decomposition.csv",
+    "k97_factorial.csv",
+    "k97_slope_x_radius.csv",
+    "k98_decomposition.csv",
+    "k98_multimodal_placebo.csv",
+    "k99_radius_within_city.csv"
+  ]
+}

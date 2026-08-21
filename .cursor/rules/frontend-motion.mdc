@@ -1,0 +1,13 @@
+---
+description: Preserve smooth, accessible motion and readable glass UI in the React frontend
+globs: apps/web/src/**/*.{ts,tsx,css}
+alwaysApply: false
+---
+
+# Frontend motion and glass UI
+
+- Reuse the index.css motion tokens (--motion-* and --motion-ease) and utilities (motion-interactive, glass-surface, glass-surface-strong); do not introduce arbitrary animation timings or easing.
+- Interactive navigation, tabs, cards, buttons, loading states, and overlays should transition smoothly rather than change instantly.
+- Keep the prefers-reduced-motion fallback effective. Never make animation required for meaning, focus, or navigation.
+- Use route View Transitions where available, but retain correct behaviour in browsers without support.
+- Keep glass surfaces translucent, contrast-safe, and away from dense data visualisations unless text and chart legibility remain clear.

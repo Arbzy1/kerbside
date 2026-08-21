@@ -17,7 +17,8 @@ port = 8787
 name = "kerbside-api-staging"
 
 [env.staging.vars]
-CORS_ORIGIN = "https://kerbside-web-staging.pages.dev"
+# Comma-separated allowed browser origins (custom domain + pages.dev fallback).
+CORS_ORIGIN = "https://kerbside.aden.website,https://kerbside-web-staging.pages.dev"
 
 [env.production]
 name = "kerbside-api"

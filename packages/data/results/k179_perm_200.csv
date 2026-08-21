@@ -1,0 +1,2 @@
+arm,n,n_cols,nperm,r2_spatial,perm_mean,perm_p,minutes,spec
+s1_9col,149,9,200,0.5779921958223794,-0.03385471220891879,0.004975124378109453,2.8531283020973204,200-draw permutation null on K177 s1_9col; does not overwrite k179_perm.csv

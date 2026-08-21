@@ -27,6 +27,7 @@ function toModelResultDto(row: typeof modelResults.$inferSelect): ModelResultDto
     id: row.id,
     experimentId: row.experimentId,
     modelName: row.modelName,
+    city: row.city,
     k: row.k,
     randomR2: row.randomR2,
     spatialR2: row.spatialR2,

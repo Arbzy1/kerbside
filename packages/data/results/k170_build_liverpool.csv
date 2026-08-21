@@ -1,0 +1,2 @@
+city,la,network,links,km,traffic_free,n_counters,median_snap_m,r2_det,r2_corr,minutes,vertices,nodata_bilinear,recovered_nearest,recovered_window,unresolved,fallback_pct,max_reach_m
+liverpool,Liverpool,bike,64000,3854.768175096458,3510,273,2.406895057691336,0.21154562089702625,0.22120804099808278,10.00722757577896,231375,935,443,492,0,0.40410588870880604,500.62460986251966

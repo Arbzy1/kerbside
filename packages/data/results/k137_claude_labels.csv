@@ -1,0 +1,25 @@
+img_id,pred,conf,note
+img000,False,0.85,residential road; lane divider markings only; no cycle symbol or coloured lane
+img001,False,0.95,unmarked suburban street
+img002,False,0.95,block-paved retail car park
+img003,False,0.6,dual carriageway; blue island sign likely keep-left; no carriageway cycle marking
+img004,False,0.4,roundabout with red surfacing alongside - ambiguous (cycle track vs anti-skid); no bicycle symbol
+img005,False,0.75,wide urban road; lane markings only
+img006,False,0.95,residential flats; unmarked
+img007,False,0.9,modern estate; unmarked block paving
+img008,False,0.55,bus-lane text and mandatory sign; no cycle symbol confirming cycles permitted
+img009,False,0.95,narrow unmarked back lane
+img010,False,0.8,urban dual carriageway; 20mph roundels only
+img011,False,0.85,residential; parking bay markings
+img012,False,0.85,wet junction; no visible cycle markings
+img013,True,0.95,red surfacing with painted bicycle symbol + advanced stop line at signals
+img014,True,0.6,20mph roundel paired with a second roundel that appears to be a cycle symbol
+img015,False,0.85,dual carriageway with verge; no cycle markings
+img016,False,0.8,retail park junction; no cycle markings
+img017,False,0.95,unmarked residential street
+img018,False,0.9,residential; unmarked
+img019,False,0.9,residential junction; give-way triangle only
+img020,False,0.95,residential cul-de-sac; unmarked
+img021,False,0.8,hatched chevron markings only
+img022,False,0.95,unmarked residential street
+img023,False,0.95,block-paved residential parking court

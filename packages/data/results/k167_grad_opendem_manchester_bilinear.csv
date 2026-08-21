@@ -1,0 +1,2 @@
+city,raster,sampling,whole_metre_pct,nodata_vertices,zero_ref_pct,zero_cand_pct,max_ref_pct,max_cand_pct,sf2_ref,sf2_cand,band_agree_pct,gradient_passed
+manchester,N53W003.HGT,bilinear,35.58308544866403,0,38.08478194571516,47.06109586255972,26.779415014804066,21.35275463188036,1.314983195954051,1.3429175951204633,90.54386499949172,True

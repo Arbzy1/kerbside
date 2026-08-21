@@ -1,0 +1,6 @@
+spec,scale,k2,k11,rule_a,rule_b,holds
+log1p,log scale (this project's standard),0.30613841571712,0.3216565548633204,True,True,True
+log1p_backtx,"count scale, fitted on logs and back-transformed",0.20582480415256585,0.21653301646064804,True,True,True
+raw,"count scale, untransformed, unweighted",0.18239909218931707,0.19833298673516345,True,True,True
+raw_w,"count scale, Cooper's own weighting RW(y)=y^0.7/y",0.19351678040808748,0.2030960345788416,True,True,True
+poisson,"count scale, Poisson GLM with a log link",0.18064677590712142,0.203265892062838,True,True,True

@@ -1,0 +1,2 @@
+city,la,network,links,km,traffic_free,n_counters,median_snap_m,r2_det,r2_corr,minutes,vertices,nodata_bilinear,recovered_nearest,recovered_window,unresolved,fallback_pct,max_reach_m
+sheffield,Sheffield,bike,67366,4750.0739789018235,5320,189,1.663562993851361,0.11340519473084351,0.17548168418359852,11.190590711434682,314985,0,0,0,0,0.0,0.0

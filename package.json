@@ -25,6 +25,7 @@
     "db:migrate:prod": "npm run db:migrate -w @kerbside/api",
     "deploy:staging": "npm run deploy:staging -w @kerbside/api && npm run deploy:staging -w @kerbside/web",
     "deploy:prod": "npm run deploy:prod -w @kerbside/api && npm run deploy:prod -w @kerbside/web",
+    "deploy:both": "node scripts/deploy-both.mjs",
     "smoke:deploy": "node scripts/smoke-deploy.mjs"
   },
   "devDependencies": {

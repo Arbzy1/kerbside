@@ -1,0 +1,2 @@
+city,la,network,links,km,traffic_free,n_counters,median_snap_m,r2_det,r2_corr,minutes,vertices,nodata_bilinear,recovered_nearest,recovered_window,unresolved,fallback_pct,max_reach_m
+wigan,Wigan,bike,77525,4476.770885369741,5857,140,1.702634876168123,0.21080383132967215,0.21255391463488235,14.165506287415822,298422,0,0,0,0,0.0,0.0

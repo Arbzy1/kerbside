@@ -1,0 +1,2 @@
+city,raster,sampling,whole_metre_pct,nodata_vertices,zero_ref_pct,zero_cand_pct,max_ref_pct,max_cand_pct,sf2_ref,sf2_cand,band_agree_pct,gradient_passed
+manchester,N53W003.HGT,nearest,100.0,0,38.08478194571516,65.71109077970925,26.779415014804066,117.42907824487628,1.314983195954051,1.5384074540611976,86.75612483480735,False

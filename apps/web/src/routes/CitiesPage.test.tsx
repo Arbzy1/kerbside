@@ -8,29 +8,35 @@ import { formatSignedR2 } from "@/lib/verdicts";
 const sampleCities: CityDto[] = [
   {
     id: "1",
-    name: "Kent",
-    laCode: "KENT",
-    country: "England",
-    nCountPoints: 525,
-    heldOutR2: 0.443,
+    name: "Cardiff",
+    laCode: "CARDIFF",
+    country: "Wales",
+    nCountPoints: 149,
+    heldOutR2: 0.441,
+    heldOutR2Corr: 0.561,
+    local10R2: 0.388,
     createdAt: "2026-01-01T00:00:00.000Z",
   },
   {
     id: "2",
-    name: "Lancashire",
-    laCode: "LANCASHIRE",
+    name: "Nottingham",
+    laCode: "NOTTINGHAM",
     country: "England",
-    nCountPoints: 392,
-    heldOutR2: 0.56,
+    nCountPoints: 147,
+    heldOutR2: 0.303,
+    heldOutR2Corr: 0.406,
+    local10R2: 0.351,
     createdAt: "2026-01-01T00:00:00.000Z",
   },
   {
     id: "3",
-    name: "Hertfordshire",
-    laCode: "HERTFORDSHIRE",
+    name: "Rotherham",
+    laCode: "ROTHERHAM",
     country: "England",
-    nCountPoints: 320,
-    heldOutR2: 0.241,
+    nCountPoints: 166,
+    heldOutR2: -1.348,
+    heldOutR2Corr: 0.223,
+    local10R2: -0.049,
     createdAt: "2026-01-01T00:00:00.000Z",
   },
 ];
@@ -39,46 +45,56 @@ describe("rankCitiesByHeldOutR2", () => {
   it("ranks highest held-out R² first", () => {
     const ranked = rankCitiesByHeldOutR2(sampleCities);
     expect(ranked.map((c) => c.name)).toEqual([
-      "Lancashire",
-      "Kent",
-      "Hertfordshire",
+      "Cardiff",
+      "Nottingham",
+      "Rotherham",
     ]);
   });
 
-  it("does not include Cardiff in the transfer cohort ranking", () => {
+  it("includes Cardiff in the twelve-city working set", () => {
     const ranked = rankCitiesByHeldOutR2(sampleCities);
-    expect(ranked.some((c) => c.name === "Cardiff")).toBe(false);
+    expect(ranked.some((c) => c.name === "Cardiff")).toBe(true);
+    expect(ranked[0]?.name).toBe("Cardiff");
   });
 });
 
-describe("Cardiff contrast (not a chart bar)", () => {
-  it("renders Cardiff separately with destructive emphasis, not in the cohort table", () => {
+describe("twelve-city transfer framing", () => {
+  it("shows Cardiff in the ranked table with r² and R², not as a failure contrast", () => {
     const summary: TransferSummaryDto = {
-      withinCityR2: 0.415,
-      acrossCityR2: 0.403,
-      transferPenalty: -0.012,
-      cohortNPoints: 8735,
-      cohortNAuthorities: 36,
-      cardiffOnlyR2: 0.398,
-      cardiffFromElsewhereR2: 0.137,
-      cardiffNPoints: 78,
+      nCities: 12,
+      nPoints: 2334,
+      r2AtK2: 0.306,
+      r2AtK11: 0.322,
+      r2DetAtK2: -0.085,
+      r2DetAtK11: 0.033,
+      local10R2: 0.208,
+      oracleR2: 0.28,
+      envelope: "800/1600/3200",
     };
 
     render(
       <div>
-        <div data-testid="cardiff-contrast" className="border-destructive/40">
-          <p>{formatSignedR2(summary.cardiffFromElsewhereR2)}</p>
+        <div data-testid="transfer-framing">
+          <p>
+            ranking transfers at two cities ({formatSignedR2(summary.r2AtK2)})
+          </p>
+        </div>
+        <div data-testid="cardiff-best">
+          Cardiff is the best held-out city
         </div>
         <CityTable cities={rankCitiesByHeldOutR2(sampleCities)} />
       </div>,
     );
 
-    const contrast = screen.getByTestId("cardiff-contrast");
-    expect(contrast.className).toContain("destructive");
-    expect(contrast.textContent).toContain("+0.137");
+    expect(screen.getByTestId("cardiff-best").textContent).toContain(
+      "best held-out city",
+    );
+    expect(screen.queryByTestId("cardiff-contrast")).toBeNull();
 
     const table = screen.getByTestId("city-transfer-table");
-    expect(table.textContent).not.toContain("Cardiff");
+    expect(table.textContent).toContain("Cardiff");
+    expect(table.textContent).toContain("+0.561");
+    expect(table.textContent).toContain("+0.441");
     expect(table.querySelectorAll("tbody tr")).toHaveLength(3);
   });
 });

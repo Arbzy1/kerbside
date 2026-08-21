@@ -1,0 +1,2 @@
+city,raster,sampling,whole_metre_pct,nodata_vertices,zero_ref_pct,zero_cand_pct,max_ref_pct,max_cand_pct,sf2_ref,sf2_cand,band_agree_pct,gradient_passed
+bristol,N3000000E3000000.tif,bilinear,0.0,0,38.735907608909145,39.33299288997132,67.79924229365812,33.251279914181694,1.9915626415524217,1.908867255450367,92.67392072907256,True

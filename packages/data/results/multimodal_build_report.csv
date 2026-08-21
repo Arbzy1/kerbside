@@ -1,0 +1,2 @@
+n_roads,n_rail,n_connectors,n_stations,stations_dropped,n_full,n_noconn,rail_z_offset,gate_g1_road_identical,gate_g2_rail_components,gate_g2_giant_share,distinct_lines
+16453,580,27,27,0,17060,17033,30.0,True,5,0.8076256499133448,36

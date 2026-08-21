@@ -1,0 +1,31 @@
+highway,median,count,city
+motorway,79133.0,3,cardiff
+primary,18774.5,52,cardiff
+primary_link,60908.0,1,cardiff
+residential,807.0,43,cardiff
+secondary,6322.0,13,cardiff
+tertiary,8124.0,19,cardiff
+trunk,56022.5,12,cardiff
+unclassified,2212.5,6,cardiff
+motorway,75502.5,8,bristol
+motorway_link,32611.0,3,bristol
+primary,12615.0,46,bristol
+primary_link,28160.5,2,bristol
+residential,818.5,44,bristol
+secondary,8111.5,14,bristol
+tertiary,5425.5,6,bristol
+trunk,21101.0,45,bristol
+trunk_link,16357.0,4,bristol
+unclassified,4062.5,10,bristol
+"['motorway', 'trunk']",73611.0,2,manchester
+"['motorway_link', 'trunk_link']",79146.0,1,manchester
+"['residential', 'unclassified']",1193.0,2,manchester
+motorway,83665.0,16,manchester
+motorway_link,62895.5,2,manchester
+primary,6939.5,44,manchester
+residential,1030.0,57,manchester
+secondary,11573.0,12,manchester
+tertiary,6849.0,35,manchester
+trunk,21829.0,79,manchester
+trunk_link,14977.0,3,manchester
+unclassified,2622.0,5,manchester

@@ -1,0 +1,16 @@
+scope,step,city,spec,mode,metric,value,step_cost
+within_city,Cooper-closest: r2 / raw / in-sample,cardiff,raw,insample,r2_corr,0.4002279152355457,
+within_city,Cooper-closest: r2 / raw / in-sample,bristol,raw,insample,r2_corr,0.2152290585482959,
+within_city,Cooper-closest: r2 / raw / in-sample,manchester,raw,insample,r2_corr,0.2285843161628551,
+within_city,- out-of-sample validation,cardiff,raw,oof,r2_corr,0.1201489420905641,-0.2800789731449816
+within_city,- out-of-sample validation,bristol,raw,oof,r2_corr,0.0191197936285218,-0.1961092649197741
+within_city,- out-of-sample validation,manchester,raw,oof,r2_corr,0.0598399818849561,-0.168744334277899
+within_city,- coefficient of determination,cardiff,raw,oof,r2_det,0.0829874676373361,-0.03716147445322801
+within_city,- coefficient of determination,bristol,raw,oof,r2_det,-0.7857255299553346,-0.8048453235838564
+within_city,- coefficient of determination,manchester,raw,oof,r2_det,-0.0418578965242512,-0.1016978784092073
+within_city,- log1p target  = THIS PROJECT,cardiff,log1p,oof,r2_det,0.562662217148907,0.47967474951157085
+within_city,- log1p target  = THIS PROJECT,bristol,log1p,oof,r2_det,0.3972187148635851,1.1829442448189198
+within_city,- log1p target  = THIS PROJECT,manchester,log1p,oof,r2_det,0.3706661811423286,0.4125240776665798
+loco,- out-of-sample validation,(mean),raw,oof,r2_corr,0.13457827803135405,
+loco,- coefficient of determination,(mean),raw,oof,r2_det,-0.24653920093711176,-0.3811174789684658
+loco,- log1p target  = THIS PROJECT,(mean),log1p,oof,r2_det,0.29691668833951784,0.5434558892766296

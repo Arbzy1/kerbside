@@ -1,0 +1,28 @@
+city,la,network,links,km,traffic_free,n_counters,median_snap_m,r2_det,r2_corr,minutes,_arm,_net,_pts,vertices,nodata_bilinear,recovered_nearest,recovered_window,unresolved,fallback_pct,max_reach_m
+birmingham,Birmingham,bike,112662,7307.1794694337095,6396,345,1.768177154799004,0.2273635908008247,0.2456306688640802,33.54175612131755,C:\Users\aden\Documents\DISSERTATION\DISSERTATION\outputs\k170_birmingham\birmingham_arm.shp,"           fid  ...  is_tf
+0            1  ...   True
+1            2  ...  False
+2            3  ...  False
+3            4  ...  False
+4            5  ...  False
+...        ...  ...    ...
+112657  112658  ...  False
+112658  112659  ...   True
+112659  112660  ...   True
+112660  112661  ...  False
+112661  112662  ...  False
+
+[112662 rows x 10 columns]","       count_point_id  year  ... all_motor_vehicles               geometry
+0              947750  2019  ...               8771  POINT (408471 289222)
+1              947748  2019  ...               7126  POINT (412184 283469)
+2              947747  2019  ...              10646  POINT (410800 292153)
+3              947741  2019  ...               3915  POINT (407446 285298)
+22             947735  2019  ...              11879  POINT (407662 283183)
+...               ...   ...  ...                ...                    ...
+34216          806671  2025  ...              10870  POINT (410881 294432)
+34299          806475  2025  ...              11309  POINT (405041 285779)
+34374           17682  2025  ...              15984  POINT (411874 294882)
+34379          806503  2025  ...               8519  POINT (404200 286144)
+34701          806592  2025  ...                554  POINT (411279 291277)
+
+[356 rows x 17 columns]",451989,0,0,0,0,0.0,0.0

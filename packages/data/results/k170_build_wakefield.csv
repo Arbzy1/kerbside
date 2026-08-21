@@ -1,0 +1,2 @@
+city,la,network,links,km,traffic_free,n_counters,median_snap_m,r2_det,r2_corr,minutes,vertices,nodata_bilinear,recovered_nearest,recovered_window,unresolved,fallback_pct,max_reach_m
+wakefield,Wakefield,bike,61244,4143.6740148485005,3497,172,1.7092425065412344,0.09591087449159177,0.154399773794885,7.516566809018453,249443,0,0,0,0,0.0,0.0

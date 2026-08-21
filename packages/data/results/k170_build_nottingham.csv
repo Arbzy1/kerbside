@@ -1,0 +1,2 @@
+city,la,network,links,km,traffic_free,n_counters,median_snap_m,r2_det,r2_corr,minutes,vertices,nodata_bilinear,recovered_nearest,recovered_window,unresolved,fallback_pct,max_reach_m
+nottingham,Nottingham,bike,55969,2928.2026060324774,3833,147,2.5706674842787853,-0.1039121759426254,0.148823161322378,10.802024825414021,221634,0,0,0,0,0.0,0.0

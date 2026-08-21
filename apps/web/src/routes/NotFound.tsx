@@ -9,7 +9,7 @@ type NotFoundProps = {
 
 export function NotFound({
   title = "Page not found",
-  message = "That route does not exist in this build of kerbside.",
+  message = "That page is not on this site.",
 }: NotFoundProps) {
   return (
     <div className="space-y-6" data-testid="not-found">
@@ -18,7 +18,7 @@ export function NotFound({
         <AlertDescription>{message}</AlertDescription>
       </Alert>
       <Button asChild variant="outline">
-        <Link to="/">Back to scoreboard</Link>
+        <Link to="/">Back to Findings</Link>
       </Button>
     </div>
   );

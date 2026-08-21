@@ -1,7 +1,8 @@
-import type { CitiesListResponse, TransferSummaryDto } from "@kerbside/shared";
+import type { CitiesListResponse, CityDto, TransferSummaryDto } from "@kerbside/shared";
 import { CityTable } from "@/components/CityTable";
 import { CityTransferChart } from "@/components/CityTransferChart";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { apiUrl } from "@/lib/apiBase";
@@ -9,50 +10,85 @@ import { rankCitiesByHeldOutR2 } from "@/lib/cities";
 import { useApi } from "@/lib/useApi";
 import { formatSignedR2 } from "@/lib/verdicts";
 
-function TransferFraming({ summary }: { summary: TransferSummaryDto }) {
+function TransferFraming({
+  summary,
+  cardiff,
+  rotherham,
+}: {
+  summary: TransferSummaryDto;
+  cardiff: CityDto | null;
+  rotherham: CityDto | null;
+}) {
   return (
     <div className="space-y-4" data-testid="transfer-framing">
-      <p className="text-muted-foreground max-w-3xl text-base leading-relaxed">
-        Models trained on other authorities transfer well across the{" "}
-        {summary.cohortNAuthorities}-authority cohort (n = {summary.cohortNPoints}
-        ): within-city R² is {formatSignedR2(summary.withinCityR2)}, across-city
-        leave-one-authority-out R² is {formatSignedR2(summary.acrossCityR2)}, a
-        transfer penalty of only {formatSignedR2(summary.transferPenalty)}. Cardiff
-        is the contrast case that does not — it falls below the 150-point threshold
-        for that cohort (n = {summary.cardiffNPoints}), so it is shown separately
-        rather than ranked among the fifteen.
-      </p>
+      <div className="text-muted-foreground max-w-3xl space-y-3 text-base leading-relaxed">
+        <p>
+          Ranking already transfers at two of{" "}
+          <span className="text-foreground font-medium">
+            {summary.nCities} cities
+          </span>{" "}
+          (mean held-out r² {formatSignedR2(summary.r2AtK2)};{" "}
+          {formatSignedR2(summary.r2AtK11)} at eleven).
+        </p>
+        <p>
+          Scale does not: mean held-out R² moves only from{" "}
+          {formatSignedR2(summary.r2DetAtK2)} to{" "}
+          {formatSignedR2(summary.r2DetAtK11)}. Ten random local counts,
+          intercept only, raise that R² to {formatSignedR2(summary.local10R2)}{" "}
+          (oracle {formatSignedR2(summary.oracleR2)}).
+        </p>
+        <p>
+          {summary.envelope} beats the narrow envelope in 11 of 12 cities; it is not separable from the wider one.
+        </p>
+      </div>
 
-      <Card data-testid="cardiff-contrast" className="border-destructive/40">
-        <CardHeader className="pb-2">
-          <CardTitle className="text-base">Cardiff (below cohort threshold)</CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm leading-relaxed">
-          <p>
-            Cardiff-only model:{" "}
-            <span className="text-foreground font-medium tabular-nums">
-              {formatSignedR2(summary.cardiffOnlyR2)}
-            </span>
-          </p>
-          <p>
-            Trained elsewhere → Cardiff:{" "}
-            <span className="text-destructive font-medium tabular-nums">
-              {formatSignedR2(summary.cardiffFromElsewhereR2)}
-            </span>
-          </p>
-          <p className="text-muted-foreground mt-2">
-            Transfer into Cardiff is markedly worse than the cohort average —
-            evidence that a Cardiff-only result should not be presented as
-            general.
-          </p>
-        </CardContent>
-      </Card>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <Card data-testid="cardiff-best" className="border-primary/40">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base">
+              Cardiff is the best held-out city
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm leading-relaxed">
+            <p>
+              Leave-one-city-out R²{" "}
+              <span className="text-foreground font-medium tabular-nums">
+                {cardiff ? formatSignedR2(cardiff.heldOutR2) : "+0.441"}
+              </span>
+              {cardiff
+                ? `, r² ${formatSignedR2(cardiff.heldOutR2Corr)}`
+                : ", r² +0.561"}
+              . Ranking and scale both travel.
+            </p>
+          </CardContent>
+        </Card>
+        <Card data-testid="rotherham-scale">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base">
+              Rotherham: ranking holds, scale does not
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm leading-relaxed">
+            <p>
+              r²{" "}
+              <span className="text-foreground font-medium tabular-nums">
+                {rotherham ? formatSignedR2(rotherham.heldOutR2Corr) : "+0.223"}
+              </span>
+              , R²{" "}
+              <span className="text-foreground font-medium tabular-nums">
+                {rotherham ? formatSignedR2(rotherham.heldOutR2) : "−1.348"}
+              </span>
+              . The level is wrong; it stays in every mean.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }
 
 export function CitiesPage() {
-  const { data, error, isLoading } = useApi<CitiesListResponse>(
+  const { data, error, isLoading, retry } = useApi<CitiesListResponse>(
     apiUrl("/api/cities"),
   );
 
@@ -70,7 +106,12 @@ export function CitiesPage() {
     return (
       <Alert variant="destructive" data-testid="cities-error">
         <AlertTitle>Could not load cities</AlertTitle>
-        <AlertDescription>{error ?? "Cities response was empty"}</AlertDescription>
+        <AlertDescription className="space-y-3">
+          <p>{error ?? "Cities response was empty"}</p>
+          <Button variant="outline" size="sm" onClick={retry}>
+            Try again
+          </Button>
+        </AlertDescription>
       </Alert>
     );
   }
@@ -82,15 +123,56 @@ export function CitiesPage() {
       <header className="space-y-2">
         <h1 className="text-3xl font-semibold tracking-tight">Cities</h1>
         <p className="text-muted-foreground text-sm">
-          Cross-authority transfer — leave-city-out held-out R²
+          Leave-one-city-out r² and R², plus a local intercept of ten counts.
         </p>
       </header>
 
-      <TransferFraming summary={data.transferSummary} />
+      <TransferFraming
+        summary={data.transferSummary}
+        cardiff={
+          data.cities.find((c) => c.name.toLowerCase() === "cardiff") ?? null
+        }
+        rotherham={
+          data.cities.find((c) => c.name.toLowerCase() === "rotherham") ?? null
+        }
+      />
+
+      {data.studyCities.length > 0 ? (
+        <section className="space-y-3" data-testid="study-cities">
+          <h2 className="text-lg font-semibold tracking-tight">
+            Calibration cities (noise floors)
+          </h2>
+          <p className="text-muted-foreground max-w-3xl text-sm leading-relaxed">
+            Radius and slope were first measured here. Noise floors are
+            city-specific, and each is a distribution rather than a single
+            number: the range shown runs from the typical draw to the
+            conservative 95th percentile. The transfer table below is the
+            twelve-city working set, not these three alone.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {data.studyCities.map((city) => (
+              <Card key={city.city}>
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-base capitalize">
+                    {city.city}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-sm tabular-nums space-y-1">
+                  <p>n = {city.n}</p>
+                  <p className="text-muted-foreground">
+                    noise floor {city.noiseFloorMin.toFixed(3)}–
+                    {city.noiseFloorMax.toFixed(3)}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold tracking-tight">
-          Held-out R² by authority
+          Held-out R² by city
         </h2>
         <CityTransferChart cities={ranked} />
       </section>

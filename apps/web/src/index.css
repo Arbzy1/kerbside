@@ -82,6 +82,14 @@
   --sidebar-accent-foreground: oklch(0.269 0.022 142.3);
   --sidebar-border: oklch(0.9 0.01 143);
   --sidebar-ring: oklch(0.437 0.096 144.1);
+  --glass-surface: oklch(1 0 0 / 72%);
+  --glass-surface-strong: oklch(1 0 0 / 88%);
+  --glass-border: oklch(1 0 0 / 60%);
+  --glass-shadow: 0 18px 48px oklch(0.269 0.022 142.3 / 12%);
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-fast: 180ms;
+  --motion-base: 320ms;
+  --motion-slow: 520ms;
 }
 
 .dark {
@@ -116,6 +124,10 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 12%);
   --sidebar-ring: oklch(0.748 0.125 127.5);
+  --glass-surface: oklch(0.35 0.06 144 / 72%);
+  --glass-surface-strong: oklch(0.35 0.06 144 / 88%);
+  --glass-border: oklch(1 0 0 / 14%);
+  --glass-shadow: 0 18px 48px oklch(0 0 0 / 30%);
 }
 
 @layer base {
@@ -127,5 +139,118 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-surface {
+    background: var(--glass-surface);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(18px) saturate(145%);
+    -webkit-backdrop-filter: blur(18px) saturate(145%);
+  }
+
+  .glass-surface-strong {
+    background: var(--glass-surface-strong);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(22px) saturate(155%);
+    -webkit-backdrop-filter: blur(22px) saturate(155%);
+  }
+
+  .motion-interactive {
+    transition:
+      transform var(--motion-fast) var(--motion-ease),
+      background-color var(--motion-base) var(--motion-ease),
+      border-color var(--motion-base) var(--motion-ease),
+      box-shadow var(--motion-base) var(--motion-ease),
+      color var(--motion-fast) var(--motion-ease),
+      opacity var(--motion-fast) var(--motion-ease);
+  }
+
+  .motion-interactive:hover {
+    transform: translateY(-1px);
+  }
+
+  .page-shell {
+    animation: page-enter var(--motion-base) var(--motion-ease) both;
+  }
+
+  .glass-tab {
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    padding: 0.45rem 0.75rem;
+  }
+
+  .glass-tab-active {
+    background: var(--glass-surface-strong);
+    border-color: var(--glass-border);
+    box-shadow: 0 8px 20px oklch(0.269 0.022 142.3 / 10%);
+    view-transition-name: active-navigation-tab;
+  }
+
+  .glass-tab::after {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.18rem;
+    left: 0.75rem;
+    height: 2px;
+    border-radius: 9999px;
+    background: currentColor;
+    content: "";
+    opacity: 0;
+    transform: scaleX(0.35);
+    transition:
+      opacity var(--motion-fast) var(--motion-ease),
+      transform var(--motion-base) var(--motion-ease);
+  }
+
+  .glass-tab-active::after {
+    opacity: 0.75;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.992);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+::view-transition-old(root) {
+  animation: view-exit var(--motion-fast) var(--motion-ease) both;
+}
+
+::view-transition-new(root) {
+  animation: page-enter var(--motion-base) var(--motion-ease) both;
+}
+
+@keyframes view-exit {
+  to {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.996);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
   }
 }

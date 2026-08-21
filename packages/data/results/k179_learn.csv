@@ -1,0 +1,5 @@
+city,lam,status,learn_xval_r2,learn_fit_r2,n
+bristol,0.7,done,0.612,0.358,178
+bristol,0.5,done,0.777,0.299,178
+manchester,0.7,done,0.541,0.252,246
+manchester,0.5,done,0.712,0.236,246

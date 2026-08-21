@@ -1,0 +1,7 @@
+test,p,n,real,source,rank,bh_threshold,survives_fdr,p_floor,decidable,n_needed,gauss_p,gauss_z,shapiro_p,gauss_clears
+K134 provision Manchester (fwd),0.005,199,0.1185052606175272,k134_manchester_perm.csv,1,0.008333333333333333,True,0.005,True,119,,,,False
+K134 provision Manchester (fwd-rev contrast),0.005,199,0.1447472884732642,k134_manchester_perm.csv,2,0.016666666666666666,True,0.005,True,59,,,,False
+K133 provision Cardiff (fwd k=1),0.058823529411764705,50,0.0149119663734944,k133_i4_direct_osm_perm.csv,3,0.025000000000000005,False,0.0196078431372549,True,39,,,,False
+"K124 CV densifier (env=pooled, attr=cv_sw, k=1.0)",0.49019607843137253,50,0.0140260567194731,k124_cv_envelopes_perm.csv,4,0.03333333333333333,False,0.0196078431372549,True,29,,,,False
+"K120 CV densifier (attr=cv_sw, k=2.0)",0.8095238095238095,20,-0.0106210443772021,k120_cv_impedance_perm.csv,5,0.041666666666666664,False,0.047619047619047616,False,23,0.8094440293012551,-0.8758493430506735,0.760560267624939,False
+"K122 CV densifier (attr=cv_lit, k=0.25)",0.8431372549019608,50,-0.0031832747180008,k122_cv_lineformula_perm.csv,6,0.05000000000000001,False,0.0196078431372549,True,19,,,,False

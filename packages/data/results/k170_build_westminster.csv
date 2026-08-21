@@ -1,0 +1,28 @@
+city,la,network,links,km,traffic_free,n_counters,median_snap_m,r2_det,r2_corr,minutes,_arm,_net,_pts,vertices,nodata_bilinear,recovered_nearest,recovered_window,unresolved,fallback_pct,max_reach_m
+westminster,Westminster,bike,45269,2287.3643253487344,4560,147,2.666731837884632,-0.1869283287389619,0.030456053471269263,11.596438467502594,C:\Users\aden\Documents\DISSERTATION\DISSERTATION\outputs\k170_westminster\westminster_arm.shp,"         fid  ...  is_tf
+0          1  ...   True
+1          2  ...  False
+2          3  ...   True
+3          4  ...  False
+4          5  ...  False
+...      ...  ...    ...
+45264  45265  ...   True
+45265  45266  ...  False
+45266  45267  ...  False
+45267  45268  ...   True
+45268  45269  ...   True
+
+[45269 rows x 10 columns]","       count_point_id  year  ... all_motor_vehicles               geometry
+4312           804527  2019  ...               6874  POINT (527609 181432)
+4361           804529  2019  ...               1014  POINT (527142 181994)
+7114           942338  2019  ...               2088  POINT (527162 180896)
+7126           942335  2019  ...                677  POINT (525715 180812)
+7127           942337  2019  ...               6355  POINT (528585 178732)
+...               ...   ...  ...                ...                    ...
+33890           36471  2025  ...              10539  POINT (528200 181100)
+33955           26114  2025  ...              13922  POINT (529395 180534)
+34234           89351  2025  ...               6299  POINT (526873 181383)
+34281           89355  2025  ...              12951  POINT (526045 181326)
+34547           17691  2025  ...              15092  POINT (529761 180893)
+
+[149 rows x 17 columns]",193053,0,0,0,0,0.0,0.0

@@ -1,0 +1,6 @@
+metric,value,n
+cardiff_only_all_roads,0.17170159442542327,153
+cardiff_from_elsewhere_all_roads,0.0019401745296577788,153
+within_city_all_roads,0.3414328716395489,20985
+across_city_all_roads,0.32000031985165867,20985
+transfer_penalty_all_roads,-0.02143255178789022,20985

@@ -1,0 +1,2 @@
+city,n_links,osmid_matched,flagged,applied,skipped_too_long,gt6_before,gt6_after,gt10_before,gt10_after,gt20_before,gt20_after,max_before,max_after,mode,lmin,dose_ok
+cardiff,16453,16453,11,11,0,528,517,109,98,11,0,41.419975472487344,19.875767357685422,extreme,10.0,True

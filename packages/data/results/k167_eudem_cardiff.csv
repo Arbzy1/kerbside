@@ -1,0 +1,2 @@
+city,raster,sampling,whole_metre_pct,nodata_vertices,zero_ref_pct,zero_cand_pct,max_ref_pct,max_cand_pct,sf2_ref,sf2_cand,band_agree_pct,gradient_passed
+cardiff,N3000000E3000000.tif,bilinear,0.11273215778744351,223,36.09068255029478,36.44927976660791,41.419975472487344,41.31694085239845,1.8222560709900932,1.8160479620130066,99.19771470248587,True

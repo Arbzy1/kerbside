@@ -1,0 +1,3 @@
+detector,n,tp,fp,fn,tn,precision,recall,f1,pred_rate,true_rate
+"Claude (blind, this session)",24,2,0,10,12,1.0,0.16666666666666666,0.2857142857142857,0.08333333333333333,0.5
+YOLO-World (K108),24,7,9,5,3,0.4375,0.5833333333333334,0.5,0.6666666666666666,0.5

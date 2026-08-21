@@ -1,0 +1,2 @@
+city,n_links,osmid_matched,flagged,applied,skipped_too_long,gt6_before,gt6_after,gt10_before,gt10_after,gt20_before,gt20_after,max_before,max_after,mode,lmin,dose_ok
+bristol,25457,25457,30,30,0,1000,970,272,242,30,0,67.79924229365812,19.071695350099883,extreme,10.0,True

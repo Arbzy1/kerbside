@@ -1,0 +1,60 @@
+value,verdict,source,context
+0.56,TRACED,k172_coefs.csv,ng**. It led with a three-city drive-network radius table and a 0.56-vs-0.854 gap. Both are the wrong opening now. **Lead with the
+0.854,TRACED,_prod_verdicts.json,led with a three-city drive-network radius table and a 0.56-vs-0.854 gap. Both are the wrong opening now. **Lead with the result he
+800,TRACED,k172_coefs.csv,"et a local intercept; the transferable radius envelope is still 800/1600/3200. | Keep in the email | Cut (meeting,"
+1600,TRACED,k172_coefs.csv,"local intercept; the transferable radius envelope is still 800/1600/3200. | Keep in the email | Cut (meeting, if h"
++0.373,TRACED,k172_pooled.csv,"say:** S3, Nottingham-as-failure, “wide wins” on R², pooled FE +0.373 as transfer, Westminster as a calibrated city. Do not attach a"
+1988,TRACED,k130_link_cycle_infra.csv,". They are related exactly: `R² = r² − (r − α)² − β²` (Murphy 1988; α is the ratio of predicted to observed spread, β the standard"
++0.31,TRACED,k172_coefs.csv,"g is already there at two training cities: mean held-out **r² = +0.31**, and it does not really rise after that (plateau at k = 2, +0"
++0.32,TRACED,k172_loco.csv,"31**, and it does not really rise after that (plateau at k = 2, +0.32 at k = 11). Mean held-out **R²** rises slowly from −0.09 to **+"
+0.09,TRACED,k172_coefs.csv,"= 2, +0.32 at k = 11). Mean held-out **R²** rises slowly from −0.09 to **+0.03** and plateaus near zero. A shuffled-city null (perm"
++0.03,TRACED,k172_coefs.csv,2 at k = 11). Mean held-out **R²** rises slowly from −0.09 to **+0.03** and plateaus near zero. A shuffled-city null (permute y withi
++0.03,TRACED,k172_coefs.csv,"opes frozen from the other eleven, raises mean held-out R² from +0.03 to **+0.21** (knowing the held-out mean entirely is an upper bo"
++0.21,TRACED,k172_coefs.csv,"from the other eleven, raises mean held-out R² from +0.03 to **+0.21** (knowing the held-out mean entirely is an upper bound of +0.2"
++0.28,TRACED,k172_coefs.csv,0.21** (knowing the held-out mean entirely is an upper bound of +0.28). That mean is carried by cities with a large level penalty; on
++0.44,TRACED,k172_loco.csv,"lty; on Cardiff the local intercept slightly **hurts** (LOCO R² +0.44 → +0.39), because the prior level was already close. Transferre"
++0.39,TRACED,k172_coefs.csv,"Cardiff the local intercept slightly **hurts** (LOCO R² +0.44 → +0.39), because the prior level was already close. Transferred rankin"
+800,TRACED,k172_coefs.csv,"these twelve cities, leave-one-city-out **r²** still peaks at **800, 1600, 3200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1"
+1600,TRACED,k172_coefs.csv,"twelve cities, leave-one-city-out **r²** still peaks at **800, 1600, 3200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1600/32"
+3200,TRACED,k172_coefs.csv,"e cities, leave-one-city-out **r²** still peaks at **800, 1600, 3200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1600/3200/640"
++0.322,TRACED,_prod_verdicts.json,", leave-one-city-out **r²** still peaks at **800, 1600, 3200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1600/3200/6400). That i"
++0.300,TRACED,k172_coefs.csv,"e-city-out **r²** still peaks at **800, 1600, 3200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1600/3200/6400). That is the same"
+400,TRACED,k174_within.csv,"**r²** still peaks at **800, 1600, 3200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1600/3200/6400). That is the same transf"
+800,TRACED,k172_coefs.csv,"²** still peaks at **800, 1600, 3200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1600/3200/6400). That is the same transferab"
+1600,TRACED,k172_coefs.csv,"still peaks at **800, 1600, 3200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1600/3200/6400). That is the same transferable en"
++0.319,TRACED,k172_coefs.csv,"ks at **800, 1600, 3200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1600/3200/6400). That is the same transferable envelope I fo"
+1600,TRACED,k172_coefs.csv,"0, 1600, 3200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1600/3200/6400). That is the same transferable envelope I found on t"
+3200,TRACED,k172_coefs.csv,"00, 3200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1600/3200/6400). That is the same transferable envelope I found on the or"
+6400,TRACED,k174_within.csv,200** (+0.322 vs +0.300 at 400/800/1600 and +0.319 at 1600/3200/6400). That is the same transferable envelope I found on the origina
+800,TRACED,k172_coefs.csv,"es want the narrow triple, three the middle, five the wide. So `800,1600,3200` is the best *transferable* choice, and it is the bes"
+1600,TRACED,k172_coefs.csv,"ant the narrow triple, three the middle, five the wide. So `800,1600,3200` is the best *transferable* choice, and it is the best *lo"
+3200,TRACED,k172_coefs.csv,"he narrow triple, three the middle, five the wide. So `800,1600,3200` is the best *transferable* choice, and it is the best *local*"
++0.55,TRACED,k172_coefs.csv,"EH-weighted, 7-fold). My best *within-city* figure is Cardiff **+0.55** on the working spec (n = **149 DfT on-road**; you used **107"
+149,TRACED,k172_loco.csv,in-city* figure is Cardiff **+0.55** on the working spec (n = **149 DfT on-road**; you used **107 DfT + 14 Council traffic-free**);
+0.89,TRACED,c17_regeneration_diff.csv,"actually did, moves Learn’s own cell to **0.77** (λ = 0.7) / **0.89** (λ = 0.5) — still random-fold, still nine columns. A Model 3"
++0.40,TRACED,k172_coefs.csv,"ladder on this DfT-only sample is spatial **+0.20** / random **+0.40**. I run on a `bike` network with traffic-free links present, c"
+0.999,TRACED,_prod_verdicts.json,"ropping traffic-free from the *routing* graph (connected; giant 0.999) moves Cardiff **+0.015, on the floor**. I also ran `radmetric="
++0.015,TRACED,k172_loco.csv,"om the *routing* graph (connected; giant 0.999) moves Cardiff **+0.015, on the floor**. I also ran `radmetric=MATCH_ANALYTICAL` (the h"
+0.079,TRACED,k172_loco.csv,On this nine-column Euclidean-banded spec it **hurt** Cardiff (−0.079) and Bristol (−0.038). On a univariate 3 km arm it **helped** (
+0.038,TRACED,k172_coefs.csv,uclidean-banded spec it **hurt** Cardiff (−0.079) and Bristol (−0.038). On a univariate 3 km arm it **helped** (spatial R² +0.31 → +0
++0.31,TRACED,k172_coefs.csv,"ol (−0.038). On a univariate 3 km arm it **helped** (spatial R² +0.31 → +0.41; Box-Cox r 0.68 → 0.72), which is the Table 1 direction"
++0.41,TRACED,k172_coefs.csv,"38). On a univariate 3 km arm it **helped** (spatial R² +0.31 → +0.41; Box-Cox r 0.68 → 0.72), which is the Table 1 direction. **Two"
+0.68,TRACED,k173_held.csv,"ate 3 km arm it **helped** (spatial R² +0.31 → +0.41; Box-Cox r 0.68 → 0.72), which is the Table 1 direction. **Two things you may"
+0.72,TRACED,k172_coefs.csv,"m arm it **helped** (spatial R² +0.31 → +0.41; Box-Cox r 0.68 → 0.72), which is the Table 1 direction. **Two things you may want to"
+100,TRACED,_prod_verdicts.json,"to a new variable that references its source twice (`_sr=hg/euc*100, _slope=_sr>20?0:_sr, _slopefac=_slope<2?1:(…)`) crashed reli"
+120,TRACED,city_scan.csv,"ations appear closed.) 4. **Zeros, and the slope preset.** **120 of 2,334** DfT points in the twelve-city LOCO are zero (~5%);"
+"2,334",TRACED,k172_pooled.csv,"appear closed.) 4. **Zeros, and the slope preset.** **120 of 2,334** DfT points in the twelve-city LOCO are zero (~5%); `log1p(0"
+0.026,TRACED,k172_coefs.csv,~5%); `log1p(0)` puts them on the floor. Dropping them costs **−0.026** mean r² and moves mean R² **+0.03 → −0.11**. Does the sDNA
++0.03,TRACED,k172_coefs.csv,. Dropping them costs **−0.026** mean r² and moves mean R² **+0.03 → −0.11**. Does the sDNA work have a convention I should follow
+0.11,TRACED,k172_coefs.csv,g them costs **−0.026** mean r² and moves mean R² **+0.03 → −0.11**. Does the sDNA work have a convention I should follow? Sep
++0.026,TRACED,k172_coefs.csv,"CYCLE preset). Under leave-one-city-out, `s = 1` is about **+0.026 r²** and `s = 0.5` (with or without CYCLE's `a = 0.3`) about"
++0.032,TRACED,k172_loco.csv,"** and `s = 0.5` (with or without CYCLE's `a = 0.3`) about **+0.032 r²**, relative to 2. I am not declaring a new default. **Which"
++0.03,TRACED,k172_coefs.csv,"ng cities, leaves r² almost unchanged and lifts mean R² from +0.03 to +0.17 — Ridge's own scaler is already a between-city z-sc"
++0.17,TRACED,k172_coefs.csv,", leaves r² almost unchanged and lifts mean R² from +0.03 to +0.17 — Ridge's own scaler is already a between-city z-score. Do y"
+800,TRACED,k172_coefs.csv,+0.31 / +0.32; R² −0.09 → +0.03; local-10 +0.21; envelope 800/1600/3200). Local-10 **hurts Cardiff** named. - [x] MATCH_ANALY
+1600,TRACED,k172_coefs.csv,1 / +0.32; R² −0.09 → +0.03; local-10 +0.21; envelope 800/1600/3200). Local-10 **hurts Cardiff** named. - [x] MATCH_ANALYTICAL
+3200,TRACED,k172_coefs.csv,0.32; R² −0.09 → +0.03; local-10 +0.21; envelope 800/1600/3200). Local-10 **hurts Cardiff** named. - [x] MATCH_ANALYTICAL name
++0.105,TRACED,k172_coefs.csv,ff t=0.01 **+0.018 (1.3× floor)**; Bristol negative; Manchester +0.105 **withdrawn** | already run; do not revive | Leaderboard: `res
+800,TRACED,k172_coefs.csv,ful to him is: **ranking transfers; scale is a local intercept; 800 / 1600 / 3200 is still the transferable envelope.** That answer
+1600,TRACED,k172_coefs.csv,him is: **ranking transfers; scale is a local intercept; 800 / 1600 / 3200 is still the transferable envelope.** That answers the b
+3200,TRACED,k172_coefs.csv,: **ranking transfers; scale is a local intercept; 800 / 1600 / 3200 is still the transferable envelope.** That answers the brief he

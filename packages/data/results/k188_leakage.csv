@@ -1,0 +1,13 @@
+slug,n,pairs_within_50m,cross_fold_within_50m,pairs_within_100m,cross_fold_within_100m,pairs_within_250m,cross_fold_within_250m
+cardiff,149,15,0.0,18,0.0,41,0.3
+manchester,246,15,0.0,32,0.0,206,0.0
+bristol,178,11,0.0,20,0.0,91,0.0
+birmingham,345,14,0.0,24,0.0,69,0.0
+glasgow,200,16,0.0,49,0.0,219,0.0
+liverpool,273,21,0.0,58,0.0,356,1.0
+sheffield,189,3,0.0,13,0.0,60,0.0
+wakefield,172,6,0.0,10,0.0,43,0.0
+rotherham,166,1,0.0,5,0.0,18,0.0
+wigan,140,1,0.0,13,0.0,41,0.0
+edinburgh,129,2,0.0,2,0.0,16,0.0
+nottingham,147,2,0.0,12,0.0,99,0.0

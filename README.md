@@ -4,7 +4,7 @@ Web front-end and API for an MSc transport-modelling project. Interactive UI and
 
 ## What the app shows and why
 
-Kerbside presents a **scoreboard of research claims** about what improves (or harms) cycle-flow prediction from street-network and attractor features, then lets you open each linked experiment to see the **model ladder** — random vs spatial R² side by side. The **Cities** view shows leave-city-out held-out R² for the ≥150-point authority cohort, with Cardiff called out separately as the below-threshold contrast case (transfer into Cardiff is much weaker than the cohort average). The point of the UI is the same as the dissertation evidence: random K-fold looks good until spatial blocking shows the leakage; cross-city transfer holds for the eligible cohort, not for Cardiff.
+Kerbside presents a **scoreboard of research claims** about what improves (or harms) cycle-flow prediction from street-network and attractor features. Open **Cities** first for the twelve-city transfer numbers (ranking vs scale). **Findings** leads with the k-curve, then every claim. **Story** (`/guide`) is the Cooper-facing page: ranking transfers; scale needs a local intercept; radius still 800/1600/3200. Do not quote Cardiff s=1 hunt numbers or Learn 0.89 on the Guide. Live DB can go stale — reseed after copy or CSV edits (`npm run db:seed`).
 
 ## Install
 

@@ -1,7 +1,7 @@
 export type AppEnv = {
   Bindings: {
     DATABASE_URL: string;
-    /** Pages origin for this Worker env; localhost origins are always allowed. */
+    /** Allowed browser origin(s) for this Worker env; comma-separated OK. Localhost always allowed. */
     CORS_ORIGIN?: string;
   };
 };

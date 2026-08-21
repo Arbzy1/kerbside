@@ -1,0 +1,27 @@
+city,arm,kind,delta_r2,seed
+manchester,grav_p2all,real,0.16421862226984565,ten
+manchester,grav_p2s,real,0.07808224888732301,ten
+manchester,grav_sq2s,real,0.02290303742024044,ten
+manchester,grav_rand_01,curve,0.05516275984626687,42
+manchester,grav_rand_02,curve,0.09705349038357675,42
+manchester,grav_rand_03,curve,0.19860600663311712,42
+manchester,grav_rand_04,curve,-0.017009260044347885,42
+manchester,grav_rand_05,curve,-0.017491855546292706,42
+manchester,grav_rand_06,curve,0.01919852768220548,42
+manchester,grav_rand_07,curve,-0.056263325042759674,42
+manchester,grav_rand_08,curve,0.2078182930358477,42
+manchester,grav_rand_09,curve,0.13933431847987848,42
+manchester,grav_rand_10,curve,0.03859408250774293,42
+manchester,grav_rand_11,curve,-0.0016617313359650054,42
+manchester,grav_rand_12,curve,-0.3774734280627611,42
+manchester,grav_rand_13,curve,0.16471615423696595,42
+manchester,grav_rand_14,curve,0.13673791826035886,42
+manchester,grav_rand_15,curve,0.1256495378069215,42
+manchester,grav_rand_16,curve,0.05222976486175668,42
+manchester,grav_rand_17,curve,0.11215111466021471,42
+manchester,grav_rand_18,curve,0.02800880024839253,42
+manchester,grav_rand_19,curve,0.09484797564298775,42
+manchester,grav_rand_20,curve,-0.21016069114331679,42
+manchester,pct grav_p2all in curve,percentile,0.16421862226984565,0.8500
+manchester,pct grav_p2s in curve,percentile,0.07808224888732301,0.5500
+manchester,pct grav_sq2s in curve,percentile,0.02290303742024044,0.3500

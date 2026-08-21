@@ -42,6 +42,13 @@ All npm scripts use `<domain>:<action>` naming (for example `test:unit`, `lint:f
 - Prefer composition over inheritance.
 - Use named imports; keep import groups sorted (external packages, then workspace packages, then relative/`@/` paths).
 
+## Frontend motion
+
+- In `apps/web/src`, use the shared motion and glass-surface tokens in `index.css`; do not add ad-hoc durations, easing curves, or opaque surfaces.
+- Interactive state changes should animate with the shared motion utilities, while `prefers-reduced-motion` must always remove non-essential movement.
+- Route navigation uses View Transitions where supported and must retain a non-animated functional fallback.
+- Keep glass effects readable: preserve contrast, avoid blur over dense chart/table content, and never rely on motion alone to communicate state.
+
 ## NEVER-DO
 
 - Never use pnpm or yarn — npm only; do not commit `pnpm-lock.yaml` or `yarn.lock`.

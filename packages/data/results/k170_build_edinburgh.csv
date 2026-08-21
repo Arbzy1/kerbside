@@ -1,0 +1,2 @@
+city,la,network,links,km,traffic_free,n_counters,median_snap_m,r2_det,r2_corr,minutes,vertices,nodata_bilinear,recovered_nearest,recovered_window,unresolved,fallback_pct,max_reach_m
+edinburgh,City of Edinburgh,bike,57290,3850.3907182241264,7295,129,1.923491557160237,0.07908981789241498,0.1524518634367223,9.02516416311264,261121,884,547,337,0,0.3385403701732147,335.4101966249685

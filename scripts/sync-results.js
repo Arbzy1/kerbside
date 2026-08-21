@@ -19,9 +19,11 @@ if (!fs.existsSync(sourceDir)) {
 
 fs.mkdirSync(destDir, { recursive: true });
 
-const files = fs.readdirSync(sourceDir).filter((name) => name.endsWith(".csv"));
+const files = fs
+  .readdirSync(sourceDir)
+  .filter((name) => name.endsWith(".csv") || name === "WEBSITE_EXPORT.json");
 if (files.length === 0) {
-  console.error(`No CSV files found in ${sourceDir}`);
+  console.error(`No CSV/export files found in ${sourceDir}`);
   process.exit(1);
 }
 
@@ -32,4 +34,4 @@ for (const file of files) {
   console.log(`copied ${file}`);
 }
 
-console.log(`Synced ${files.length} CSV(s) into ${destDir}`);
+console.log(`Synced ${files.length} file(s) into ${destDir}`);

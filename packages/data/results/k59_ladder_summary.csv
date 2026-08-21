@@ -1,0 +1,4 @@
+city,n,monotonic,ends_le0,deltas
+cardiff,149,True,True,+0.0876;+0.0661;+0.0286;-0.0649
+manchester,258,False,True,+0.0666;+0.0694;+0.0612;-0.0206
+bristol,182,False,False,-0.0135;-1.0833;-0.0410;+0.0000

@@ -1,0 +1,5 @@
+bandedradii,cont,built,sdna_message
+True,False,True,(built)
+True,True,False,ERROR: Cannot use banded radius and continuous space together.
+False,False,True,(built)
+False,True,True,(built)

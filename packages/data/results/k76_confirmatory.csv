@@ -1,0 +1,4 @@
+contrast,d_pooled,d_loco,verdict
+slope (cycle-hybrid),-0.02105776152559019,-0.028907832113465537,above replicate floor
+weighting (p2all-neutral),0.059963236581044466,0.05577862086505847,above replicate floor
+weighting (sq2s-neutral),0.053725786041052215,0.07950160899862369,above replicate floor

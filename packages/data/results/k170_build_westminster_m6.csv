@@ -1,0 +1,2 @@
+city,la,network,links,km,traffic_free,n_counters,median_snap_m,r2_det,r2_corr,minutes,vertices,nodata_bilinear,recovered_nearest,recovered_window,unresolved,fallback_pct,max_reach_m
+westminster,Westminster,bike,119125,6499.299341542254,13122,147,2.666731837884632,-0.1429492910955133,0.03793437273019783,47.17644106547038,506001,0,0,0,0,0.0,0.0

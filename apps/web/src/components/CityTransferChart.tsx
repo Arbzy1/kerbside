@@ -13,6 +13,10 @@ const chartConfig = {
     label: "Held-out R²",
     color: "var(--primary)",
   },
+  heldOutR2Corr: {
+    label: "Held-out r²",
+    color: "var(--chart-2)",
+  },
 } satisfies ChartConfig;
 
 type CityTransferChartProps = {
@@ -23,6 +27,7 @@ export function CityTransferChart({ cities }: CityTransferChartProps) {
   const data = cities.map((city) => ({
     city: city.name,
     heldOutR2: city.heldOutR2,
+    heldOutR2Corr: city.heldOutR2Corr,
   }));
 
   return (
@@ -48,6 +53,12 @@ export function CityTransferChart({ cities }: CityTransferChartProps) {
             }
           />
           <Bar
+            dataKey="heldOutR2Corr"
+            fill="var(--color-heldOutR2Corr)"
+            radius={4}
+            name="Held-out r²"
+          />
+          <Bar
             dataKey="heldOutR2"
             fill="var(--color-heldOutR2)"
             radius={4}
@@ -56,10 +67,9 @@ export function CityTransferChart({ cities }: CityTransferChartProps) {
         </BarChart>
       </ChartContainer>
       <p className="text-muted-foreground text-sm leading-relaxed">
-        Bars are the {cities.length} authorities with ≥150 recent count points in
-        the leave-city-out cohort (forest / primary). Cardiff is not among them —
-        it has too few recent points for that threshold — so it appears below as
-        the separate contrast case, not as a highlighted bar in this chart.
+        Bars are the {cities.length} working cities. r² is ranking; R² is scale.
+        Cardiff is the best held-out city. The intercept uses ten random local
+        counts, not the busiest ten.
       </p>
     </div>
   );

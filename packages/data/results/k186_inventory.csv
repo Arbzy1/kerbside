@@ -1,0 +1,13 @@
+slug,n,n_after_location,rows_lost_location,n_after_link,rows_lost_link,pct_duplicated_location
+cardiff,149,137,12,134,15,8.1
+manchester,246,242,4,238,8,1.6
+bristol,178,173,5,172,6,2.8
+birmingham,345,337,8,331,14,2.3
+glasgow,200,191,9,187,13,4.5
+liverpool,273,264,9,262,11,3.3
+sheffield,189,187,2,187,2,1.1
+wakefield,172,168,4,166,6,2.3
+rotherham,166,165,1,164,2,0.6
+wigan,140,139,1,139,1,0.7
+edinburgh,129,127,2,126,3,1.6
+nottingham,147,147,0,147,0,0.0

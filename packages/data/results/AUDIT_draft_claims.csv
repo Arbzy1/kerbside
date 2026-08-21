@@ -1,0 +1,27 @@
+id,chapter,verdict,prose,source,note
+k173.k2.r2,CH4,OK,0.322,0.321657,K174 baseline mean LOCO r2
+k173.abstract.k2,ABSTRACT,OK,0.306,0.306138,k-curve at k=2
+k172.local10,ABSTRACT,OK,0.208,0.208164,local-10 intercept mean R2
+k172.corr,ABSTRACT,OK,0.997,0.997431,"corr(level penalty, local-10 gain)"
+k181.narrow.mean,CH4,OK,0.021,0.021334,paired contrast baseline-narrow
+k181.wide.mean,CH4,OK,0.003,0.002623,paired contrast baseline-wide
+k181.wide.lo,CH4,OK,0.012,0.011892,baseline-wide CI lower bound (sign carried by the prose)
+k185.cardiff,CH3,OK,0.0158,0.015835,Cardiff rebuilt floor
+k185.bristol,CH3,OK,0.0108,0.010796,Bristol rebuilt floor
+k185.manchester,CH3,OK,0.0056,0.005606,Manchester rebuilt floor
+k182.counted.k2,CH4,OK,0.357,0.357419,counted-only k=2 mean held-out r2
+k182.counted.R2,CH4,OK,0.12,0.119978,counted-only k=11 mean held-out R2
+k196b.published.delta,CH4,OK,0.053,0.05274,"K196b: Chan & Cooper's own per-class values, delta vs baseline"
+k196b.measured.delta,CH4,OK,0.077,0.076634,"K196b: measured class medians, delta vs baseline"
+k196b.minn.delta,CH4,OK,0.085,0.084853,"K196b: measured with n>=5, delta vs baseline"
+k196b.baseline,CH4,OK,0.322,0.321657,K196b baseline mean LOCO r2
+k199.undirected.effect,CH6,OK,0.155,0.155447,K199: effect of the measured AADT field on the undirected network
+k199.directed.effect,CH6,OK,0.039,0.03896,K199: effect of the measured AADT field on the directed network
+k199.directed.baseline,CH6,OK,0.452,0.452427,K199: the directed network's own baseline
+k187.cycle.vs.s2,CH4,OK,0.0325,0.032482,CYCLE beats s=2 by
+k196.core9,CH3,OK,0.322,0.321657,core-9 baseline at twelve
+k196.best1,CH3,OK,0.293,0.293114,best single column at twelve
+k189.vif,CH3,OK,354.0,353.781117,max VIF across the twelve
+k188.k5,CH3,OK,0.195,0.195205,mean within-city R2 at 5 blocks
+ch5.bristol.rho,CH5,OK,0.476,0.475741,"Bristol out-of-distribution rho, DINOv2"
+ch5.clip.rho,CH5,OK,0.438,0.437659,"Bristol out-of-distribution rho, CLIP"

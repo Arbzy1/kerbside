@@ -1,0 +1,27 @@
+ladder,city,n_arms,best_arm,best_effect,floor,n_within_floor,plateau,verdict,spread,spread_vs_floor,note
+K99 radius (within-city),cardiff,5,"1600,3200,6400",0.1423318332794015,0.013974,0,"1600,3200,6400",point optimum,0.4243594475118918,30.36778642563989,matched k=9
+K99 radius (within-city),bristol,5,"800,1600,3200",0.0279927849479873,0.004457,0,"800,1600,3200",point optimum,0.14246855669427,31.965123781527932,matched k=9
+K99 radius (within-city),manchester,5,"400,800,1600",0.0,0.000757,0,"400,800,1600",point optimum,0.2147216989617212,283.64821527307953,matched k=9
+K80 radius (pooled),pooled,5,"800,1600,3200",0.5151137345703641,0.0109611336880423,0,"800,1600,3200",point optimum,0.17229743193556124,15.718942660422401,floor = max fold-seed sd 0.0110 (P47b: the replicate-pair floor is 0 here)
+K80 radius (LOCO),pooled,5,"800,1600,3200",0.4149765413758273,0.0109611336880423,0,"800,1600,3200",point optimum,0.1697780002791505,15.48909128481522,floor = max fold-seed sd 0.0110
+"K81 turn cost (pooled-OOF, via K94)",cardiff,8,turn_j32,0.0026412573222219,0.013974,7,turn_j32; turn_j00; turn_j01; turn_j04; turn_j08; turn_j16; turn_j64; turn_j128,PLATEAU,0.0081742516832086,0.5849614772583798,effects are pooled-OOF; K81's own CSV is mean-per-fold
+"K81 turn cost (pooled-OOF, via K94)",bristol,8,turn_j04,0.0061560009391864,0.004457,2,turn_j04; turn_j08; turn_j32,PLATEAU,0.0274254273555482,6.153337975218354,effects are pooled-OOF; K81's own CSV is mean-per-fold
+"K81 turn cost (pooled-OOF, via K94)",manchester,8,turn_j64,0.0411487183373627,0.000757,0,turn_j64,point optimum,0.0438667758646152,57.94818476171097,effects are pooled-OOF; K81's own CSV is mean-per-fold
+K96 A_exponent (narrow radii),cardiff,8,slp_s4,0.0168469620133617,0.013974,2,slp_s4; slp_s3; slp_s6,PLATEAU,0.08209149102881369,5.874587879548711,superseded envelope - see C23
+K96 B_steepness (narrow radii),cardiff,5,slp_m20,0.0092693294505218,0.013974,2,slp_m20; slp_preset; slp_m15,PLATEAU,0.0368612076255191,2.6378422517188422,superseded envelope - see C23
+K96 C_edges (narrow radii),cardiff,4,slp_e123,0.0002650598555826,0.013974,1,slp_e123; slp_preset,PLATEAU,0.041736524713308805,2.9867271155938746,superseded envelope - see C23
+K96 A_exponent (narrow radii),bristol,8,slp_s1,0.0020189221671821,0.004457,2,slp_s1; slp_preset; slp_s15,PLATEAU,0.0667728496437183,14.98156823955986,superseded envelope - see C23
+K96 B_steepness (narrow radii),bristol,5,slp_m075,0.0025202214214777,0.004457,2,slp_m075; slp_preset; slp_m05,PLATEAU,0.045364902422682006,10.178349208589188,superseded envelope - see C23
+K96 C_edges (narrow radii),bristol,4,slp_e369,0.0032346016542452,0.004457,1,slp_e369; slp_preset,PLATEAU,0.0931456919409737,20.89874174129991,superseded envelope - see C23
+K96 A_exponent (narrow radii),manchester,8,slp_s0,0.0290423592059102,0.000757,0,slp_s0,point optimum,0.060195906300971394,79.51903078067555,superseded envelope - see C23
+K96 B_steepness (narrow radii),manchester,5,slp_m05,0.019178543743309,0.000757,0,slp_m05,point optimum,0.021022277902451602,27.77051242067583,superseded envelope - see C23
+K96 C_edges (narrow radii),manchester,4,slp_e369,0.0299382667200071,0.000757,0,slp_e369,point optimum,0.08128329878058929,107.3755598158379,superseded envelope - see C23
+"K97 slope _s @ 800,1600,3200",bristol,7,1.5,0.0280574655610963,0.004457,0,1.5,point optimum,0.1131981772105821,25.3978409716361,
+"K97 slope _s @ 400,800,1600",cardiff,9,4.0,0.0168469620133617,0.013974,5,4.0; 3.0; 3.5; 4.5; 5.0; 6.0,PLATEAU,0.08209149102881369,5.874587879548711,
+"K97 slope _s @ 800,1600,3200",cardiff,9,2.0,0.0,0.013974,2,2.0; 3.0; 3.5,PLATEAU,0.0656302253856135,4.6965954905977885,
+"K100 nqpdd (k=9, published design)",cardiff,4,1.0,0.0,0.013974,0,1.0,point optimum,0.0996494602451906,7.131061989780349,
+"K100 nqpdd (k=3, isolated)",cardiff,4,1.0,0.0,0.013974,0,1.0,point optimum,0.5073692867371445,36.30809265329501,
+"K100 nqpdd (k=9, published design)",bristol,4,1.5,0.0047250477551883,0.004457,2,1.5; 0.5; 2.0,PLATEAU,0.0047250477551883,1.0601408470245233,
+"K100 nqpdd (k=3, isolated)",bristol,4,0.5,0.1650475775820141,0.004457,0,0.5,point optimum,0.3181694189104196,71.38645252645718,
+"K100 nqpdd (k=9, published design)",manchester,4,0.5,0.0031176252353123,0.000757,0,0.5,point optimum,0.0122962543584232,16.243400737679263,
+"K100 nqpdd (k=3, isolated)",manchester,4,0.5,0.1154408724267669,0.000757,0,0.5,point optimum,0.47321438062420185,625.1180721587872,

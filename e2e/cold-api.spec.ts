@@ -6,7 +6,7 @@ test.describe("cold API error states", () => {
     await expect(page.getByTestId("scoreboard-error")).toBeVisible({
       timeout: 15_000,
     });
-    await expect(page.getByText("Could not load the scoreboard")).toBeVisible();
+    await expect(page.getByText("Could not load findings")).toBeVisible();
     await expect(page.getByTestId("scoreboard")).toHaveCount(0);
   });
 

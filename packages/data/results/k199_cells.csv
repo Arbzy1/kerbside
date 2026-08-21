@@ -1,0 +1,5 @@
+network,field,n,n_cols,r2_spatial,surface
+undirected,uniform,149,9,0.5501564746481119,cardiff_arm.shp
+undirected,rcaadt,149,9,0.3947096975622809,cardiff_rcaadt_t004.shp
+directed,uniform,149,9,0.4524272963708601,dir_uniform.shp
+directed,rcaadt,149,9,0.41346693519304417,dir_rcaadt.shp

@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export type UseApiResult<T> = {
   data: T | null;
   error: string | null;
   isLoading: boolean;
   status: number | null;
+  retry: () => void;
 };
 
 export function useApi<T>(url: string | null): UseApiResult<T> {
@@ -12,6 +13,8 @@ export function useApi<T>(url: string | null): UseApiResult<T> {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(Boolean(url));
   const [status, setStatus] = useState<number | null>(null);
+  const [retryKey, setRetryKey] = useState(0);
+  const retry = useCallback(() => setRetryKey((key) => key + 1), []);
 
   useEffect(() => {
     if (!url) {
@@ -76,7 +79,7 @@ export function useApi<T>(url: string | null): UseApiResult<T> {
     return () => {
       cancelled = true;
     };
-  }, [url]);
+  }, [url, retryKey]);
 
-  return { data, error, isLoading, status };
+  return { data, error, isLoading, status, retry };
 }

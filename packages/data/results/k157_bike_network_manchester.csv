@@ -1,0 +1,4 @@
+network,links,km,traffic_free_links,traffic_free_km,traffic_free_wide_links,traffic_free_wide_km,top_tags,counters_on_traffic_free,cycleway_links,cycleway_km
+production (drive),49185,3906.9004557187436,0,0.0,0,0.0,residential=34514; tertiary=4106; trunk=2691; primary=2616; unclassified=2532; secondary=1596; trunk_link=369; motorway_link=169,,,
+rebuilt (drive),49185,3906.9004557187436,0,0.0,0,0.0,residential=34514; tertiary=4106; trunk=2691; primary=2616; unclassified=2532; secondary=1596; trunk_link=369; motorway_link=169,,,
+rebuilt (bike),113682,5997.433169636618,13732,775.6656529631647,14436,876.2805179604572,residential=43924; service=31995; path=8793; tertiary=5930; cycleway=5446; unclassified=4562; primary=3891; trunk=3781,64.0,5083.0,346.8813172505444

@@ -1,0 +1,4 @@
+contrast,a,b,delta
+A - B   weighting,A_grav_sq2s,B_cycle_neutral,-0.16795232708530963
+B - C   routing metric,B_cycle_neutral,C_nested_angular,0.1254130937744034
+D - C   NETWORK (walk-drive),D_cardiff_walk,C_nested_angular,-0.05536449219509405

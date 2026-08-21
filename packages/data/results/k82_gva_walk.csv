@@ -1,0 +1,13 @@
+arm,model,n,pooled_oof_r2,sd,desc
+A_grav_sq2s,sdna,201,-0.002423886417848631,0.0028913761083986336,drive 16k · cycle · banded · transit->retail weights
+A_grav_sq2s,poi,201,0.35136035956109873,0.006962140024439951,drive 16k · cycle · banded · transit->retail weights
+A_grav_sq2s,sdna_poi,201,0.3829911722731359,0.005371305901850124,drive 16k · cycle · banded · transit->retail weights
+B_cycle_neutral,sdna,201,0.165528440667461,0.005783895932328123,drive 16k · cycle · banded · unweighted
+B_cycle_neutral,poi,201,0.35136035956109873,0.006962140024439951,drive 16k · cycle · banded · unweighted
+B_cycle_neutral,sdna_poi,201,0.37026400389526,0.006242470911488822,drive 16k · cycle · banded · unweighted
+C_nested_angular,sdna,201,0.0401153468930576,0.008150181628422059,drive 16k · angular · nested · unweighted
+C_nested_angular,poi,201,0.35136035956109873,0.006962140024439951,drive 16k · angular · nested · unweighted
+C_nested_angular,sdna_poi,201,0.34497971462302796,0.0046038440550677405,drive 16k · angular · nested · unweighted
+D_cardiff_walk,sdna,201,-0.015249145302036448,0.004582201720983272,WALK 53k · angular · nested · unweighted
+D_cardiff_walk,poi,201,0.35136035956109873,0.006962140024439951,WALK 53k · angular · nested · unweighted
+D_cardiff_walk,sdna_poi,201,0.3560431034476069,0.004841297749817565,WALK 53k · angular · nested · unweighted

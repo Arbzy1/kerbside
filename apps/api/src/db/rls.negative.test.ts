@@ -10,7 +10,13 @@ const monorepoRoot = path.resolve(
 );
 config({ path: path.join(monorepoRoot, ".env") });
 
-const TABLES = ["cities", "experiments", "model_results", "verdicts"] as const;
+const TABLES = [
+  "cities",
+  "experiments",
+  "model_results",
+  "verdicts",
+  "controls",
+] as const;
 
 describe("RLS — kerbside_app cannot write", () => {
   it("rejects INSERT into each public reference table as kerbside_app", async () => {
@@ -51,6 +57,15 @@ describe("RLS — kerbside_app cannot write", () => {
               await tx`
                 INSERT INTO model_results (experiment_id, model_name)
                 VALUES ('00000000-0000-0000-0000-000000000001'::uuid, 'rls-probe')
+              `;
+            } else if (table === "controls") {
+              await tx`
+                INSERT INTO controls (
+                  city, test_name, config_name, real_value, null_mean, null_sd,
+                  null_n, percentile, interpretation
+                ) VALUES (
+                  'cardiff', 'rls', 'probe', 0, 0, 0, 1, 50, 'should fail'
+                )
               `;
             } else {
               await tx`

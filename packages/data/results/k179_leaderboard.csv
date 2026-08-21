@@ -1,0 +1,19 @@
+phase,arm,city,n,r2_spatial,r2_corr,r2_random,learn_xval_r2,learn_fit_r2,perm_p,n_cols,delta,minutes,spec
+1,estimators,,3.0,,,,,,,,,0.3840215682983398,spatial / random Ridge on K170 9-col; Learn cells from k176/k177
+1,perm_s1,cardiff,149.0,0.5779921958223794,,,,,0.024390243902439,,,0.7394846677780151,40-draw permutation null on K177 s1_9col spatial Ridge
+1,tf_snap,cardiff,153.0,,,,,,,,,0.0405088861783345,Cardiff DfT 2019+ distance to carriageway vs traffic-free
+2,learn_bristol_noboxcox_l05,bristol,178.0,,,,0.777,0.299,,,,0.0515593409538269,sdnalearn no-Box-Cox λ=0.5 on bristol K170 9-col
+2,learn_bristol_noboxcox_l07,bristol,178.0,,,,0.612,0.358,,,,0.0476399779319763,sdnalearn no-Box-Cox λ=0.7 on bristol K170 9-col
+2,learn_manchester_noboxcox_l05,manchester,246.0,,,,0.712,0.236,,,,0.0489285310109456,sdnalearn no-Box-Cox λ=0.5 on manchester K170 9-col
+2,learn_manchester_noboxcox_l07,manchester,246.0,,,,0.541,0.252,,,,0.0478022416432698,sdnalearn no-Box-Cox λ=0.7 on manchester K170 9-col
+3,bidir_bristol,bristol,178.0,0.1640559992832363,0.1887372326264699,0.2958951350919217,,,,15.0,-0.1212240007167636,10.077346324920654,bidir 15-col picker n_cols=15
+3,bidir_manchester,manchester,246.0,0.2915302868720717,0.292464833726216,0.3199376176625798,,,,15.0,-0.0161677131279283,44.52187710603078,bidir 15-col picker n_cols=15
+3,rt_bristol,bristol,178.0,0.159086238133527,0.1862741290755613,0.3056911004658489,,,,9.0,-0.1261937618664729,11.17066522439321,CYCLE_ROUNDTRIP 800/1600/3200
+3,rt_manchester,manchester,246.0,0.2602134950575381,0.2622282998787869,0.2868765482304226,,,,9.0,-0.0474845049424618,39.143229047457375,CYCLE_ROUNDTRIP 800/1600/3200
+4,build_dudley,dudley,,,0.0915993537206777,,,,,,,11.737020889918009,K170 bike s=2 9-col S3-lite; not WORKING_SLUGS
+4,build_gateshead,gateshead,,,0.027307918775334,,,,,,,10.123125660419465,K170 bike s=2 9-col S3-lite; not WORKING_SLUGS
+4,build_newcastle,newcastle,,,0.2027939477287816,,,,,,,10.109458899497984,K170 bike s=2 9-col S3-lite; not WORKING_SLUGS
+4,build_stoke,stoke,,,0.2668692438348395,,,,,,,6.185389371713002,K170 bike s=2 9-col S3-lite; not WORKING_SLUGS
+4,build_sunderland,sunderland,,,0.186967708949755,,,,,,,8.034453197320301,K170 bike s=2 9-col S3-lite; not WORKING_SLUGS
+4,s3_loco,,5.0,-0.0834109447703274,0.2417816788414412,,,,,,,1.8088271101315816,"train WORKING_SLUGS=12, predict S3-lite; k173_curve.csv not written"
+5,poke_sheet,,,,,,,,,,,,k179_note.md + meeting pack + email leftover table (body untouched)

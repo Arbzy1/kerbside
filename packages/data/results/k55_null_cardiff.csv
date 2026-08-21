@@ -1,0 +1,50 @@
+city,arm,kind,delta_r2,seed
+cardiff,grav_p2all,real,0.12071321303678317,ten
+cardiff,grav_p2s,real,0.012377221113212933,ten
+cardiff,grav_sq2s,real,0.08793933953827371,ten
+cardiff,grav_rand_01,curve,0.1532644300646202,42
+cardiff,grav_rand_02,curve,0.12647605359042097,42
+cardiff,grav_rand_03,curve,0.08605788488289723,42
+cardiff,grav_rand_04,curve,0.10136221516101152,42
+cardiff,grav_rand_05,curve,0.11610482436505049,42
+cardiff,grav_rand_06,curve,0.08513892271797063,42
+cardiff,grav_rand_07,curve,0.13228221118859573,42
+cardiff,grav_rand_08,curve,0.10957628792310253,42
+cardiff,grav_rand_09,curve,0.13298716172963515,42
+cardiff,grav_rand_10,curve,0.12288656201092296,42
+cardiff,grav_rand_11,curve,0.15295075044834494,42
+cardiff,grav_rand_12,curve,0.09061079566256347,42
+cardiff,grav_rand_13,curve,0.042650258875309766,42
+cardiff,grav_rand_14,curve,0.08920056755329231,42
+cardiff,grav_rand_15,curve,0.11611274158812718,42
+cardiff,grav_rand_16,curve,0.09680872559551507,42
+cardiff,grav_rand_17,curve,0.11390011078602358,42
+cardiff,grav_rand_18,curve,0.14264518317976166,42
+cardiff,grav_rand_19,curve,0.09314738004766071,42
+cardiff,grav_rand_20,curve,0.07965860062825558,42
+cardiff,grav_shuf_01,plain,0.1341014473628641,42
+cardiff,grav_shuf_02,plain,0.08699813378985749,42
+cardiff,grav_shuf_03,plain,0.11607490229714645,42
+cardiff,grav_shuf_04,plain,0.08746182558300708,42
+cardiff,grav_shuf_05,plain,0.10047458361181627,42
+cardiff,grav_shuf_06,plain,0.13181862002195865,42
+cardiff,grav_shuf_07,plain,0.11277623970276102,42
+cardiff,grav_shuf_08,plain,0.13002769965067773,42
+cardiff,grav_shuf_09,plain,0.14148548635846098,42
+cardiff,grav_shuf_10,plain,0.118185264471526,42
+cardiff,grav_shuf_11,plain,0.09203453852561666,42
+cardiff,grav_shuf_12,plain,0.09349791687416303,42
+cardiff,grav_shuf_13,plain,0.09783582322203016,42
+cardiff,grav_shuf_14,plain,0.08841255956209365,42
+cardiff,grav_shuf_15,plain,0.12089672955731579,42
+cardiff,grav_shuf_16,plain,0.12063804753564217,42
+cardiff,grav_shuf_17,plain,0.09984167414199252,42
+cardiff,grav_shuf_18,plain,0.08942808636281147,42
+cardiff,grav_shuf_19,plain,0.12525104931771752,42
+cardiff,grav_shuf_20,plain,0.14106090446688496,42
+cardiff,pct grav_p2all in curve,percentile,0.12071321303678317,0.6500
+cardiff,pct grav_p2all in plain,percentile,0.12071321303678317,0.6500
+cardiff,pct grav_p2s in curve,percentile,0.012377221113212933,0.0000
+cardiff,pct grav_p2s in plain,percentile,0.012377221113212933,0.0000
+cardiff,pct grav_sq2s in curve,percentile,0.08793933953827371,0.2000
+cardiff,pct grav_sq2s in plain,percentile,0.08793933953827371,0.1000

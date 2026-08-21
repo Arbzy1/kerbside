@@ -1,0 +1,6 @@
+config,pooled_r2,pooled_rho,loco_mean_r2
+nested_angular,0.446,0.578,0.354
+cycle_neutral,0.456,0.581,0.345
+hybrid_matched,0.475,0.607,0.374
+grav_p2all,0.522,0.715,0.401
+grav_sq2s,0.523,0.745,0.425

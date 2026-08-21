@@ -1,0 +1,10 @@
+weight,density,pearson_r,spearman_r
+w_pt,NQPDH400,0.114,0.134
+w_pt,NQPDH800,0.219,0.316
+w_pt,NQPDH1600,0.474,0.533
+w_pt_c60,NQPDH400,0.104,0.145
+w_pt_c60,NQPDH800,0.211,0.332
+w_pt_c60,NQPDH1600,0.447,0.533
+w_pt_exp,NQPDH400,0.131,0.177
+w_pt_exp,NQPDH800,0.258,0.403
+w_pt_exp,NQPDH1600,0.515,0.61

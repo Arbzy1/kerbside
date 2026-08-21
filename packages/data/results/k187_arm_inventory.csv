@@ -1,0 +1,79 @@
+file,column,n_arms,arms
+k55_null_cardiff.csv,arm,49,grav_p2all; grav_p2s; grav_rand_01; grav_rand_02; grav_rand_03; grav_rand_04; grav_rand_05; grav_rand_06; grav_rand_07; grav_rand_08; grav_rand_09; grav_rand_10; grav_rand_11; grav_rand_12; grav_rand_13; grav_rand_14; grav_rand_15; grav_rand_16; grav_rand_17; grav_rand_18; grav_rand_19; grav_rand_20; grav_shuf_01; grav_shuf_02; grav_shuf_03; grav_shuf_04; grav_shuf_05; grav_shuf_06; grav_shuf_07; grav_shuf_08; grav_shuf_09; grav_shuf_10; grav_shuf_11; grav_shuf_12; grav_shuf_13; grav_shuf_14; grav_shuf_15; grav_shuf_16; grav_shuf_17; grav_shuf_18
+k124_cv_envelopes.csv,arm,39,k124_cardiff_cv_gvi_k025; k124_cardiff_cv_gvi_k05; k124_cardiff_cv_gvi_k10; k124_cardiff_cv_gvi_k20; k124_cardiff_cv_lit_k025; k124_cardiff_cv_lit_k05; k124_cardiff_cv_lit_k10; k124_cardiff_cv_lit_k20; k124_cardiff_cv_sw_k025; k124_cardiff_cv_sw_k05; k124_cardiff_cv_sw_k10; k124_cardiff_cv_sw_k20; k124_cardiff_nocv; k124_narrow_cv_gvi_k025; k124_narrow_cv_gvi_k05; k124_narrow_cv_gvi_k10; k124_narrow_cv_gvi_k20; k124_narrow_cv_lit_k025; k124_narrow_cv_lit_k05; k124_narrow_cv_lit_k10; k124_narrow_cv_lit_k20; k124_narrow_cv_sw_k025; k124_narrow_cv_sw_k05; k124_narrow_cv_sw_k10; k124_narrow_cv_sw_k20; k124_narrow_nocv; k124_pooled_cv_gvi_k025; k124_pooled_cv_gvi_k05; k124_pooled_cv_gvi_k10; k124_pooled_cv_gvi_k20; k124_pooled_cv_lit_k025; k124_pooled_cv_lit_k05; k124_pooled_cv_lit_k10; k124_pooled_cv_lit_k20; k124_pooled_cv_sw_k025; k124_pooled_cv_sw_k05; k124_pooled_cv_sw_k10; k124_pooled_cv_sw_k20; k124_pooled_nocv
+k124_cv_envelopes_arms_backup.csv,arm,39,k124_cardiff_cv_gvi_k025; k124_cardiff_cv_gvi_k05; k124_cardiff_cv_gvi_k10; k124_cardiff_cv_gvi_k20; k124_cardiff_cv_lit_k025; k124_cardiff_cv_lit_k05; k124_cardiff_cv_lit_k10; k124_cardiff_cv_lit_k20; k124_cardiff_cv_sw_k025; k124_cardiff_cv_sw_k05; k124_cardiff_cv_sw_k10; k124_cardiff_cv_sw_k20; k124_cardiff_nocv; k124_narrow_cv_gvi_k025; k124_narrow_cv_gvi_k05; k124_narrow_cv_gvi_k10; k124_narrow_cv_gvi_k20; k124_narrow_cv_lit_k025; k124_narrow_cv_lit_k05; k124_narrow_cv_lit_k10; k124_narrow_cv_lit_k20; k124_narrow_cv_sw_k025; k124_narrow_cv_sw_k05; k124_narrow_cv_sw_k10; k124_narrow_cv_sw_k20; k124_narrow_nocv; k124_pooled_cv_gvi_k025; k124_pooled_cv_gvi_k05; k124_pooled_cv_gvi_k10; k124_pooled_cv_gvi_k20; k124_pooled_cv_lit_k025; k124_pooled_cv_lit_k05; k124_pooled_cv_lit_k10; k124_pooled_cv_lit_k20; k124_pooled_cv_sw_k025; k124_pooled_cv_sw_k05; k124_pooled_cv_sw_k10; k124_pooled_cv_sw_k20; k124_pooled_nocv
+k147_convention_sweep.csv,arm,36,k0.25; k0.5; k1; k2; own; pooled; slp_preset; slp_s0; slp_s1; slp_s15; slp_s3; slp_s35; slp_s4; slp_s45; slp_s5; slp_s6; slp_s8; slpr_preset_wide; slpr_s0_wide; slpr_s15_wide; slpr_s1_wide; slpr_s35_wide; slpr_s3_wide; slpr_s45_wide; slpr_s4_wide; slpr_s5_wide; slpr_s6_wide; turn_j00; turn_j01; turn_j02; turn_j04; turn_j08; turn_j128; turn_j16; turn_j32; turn_j64
+k149_headline_verdicts.csv,arm,31,k0.25; k0.5; k1; k2; slp_s0; slp_s1; slp_s15; slp_s3; slp_s35; slp_s4; slp_s45; slp_s5; slp_s6; slp_s8; slpr_s0_wide; slpr_s15_wide; slpr_s1_wide; slpr_s35_wide; slpr_s3_wide; slpr_s45_wide; slpr_s4_wide; slpr_s5_wide; slpr_s6_wide; turn_j00; turn_j01; turn_j04; turn_j08; turn_j128; turn_j16; turn_j32; turn_j64
+k166_measure_families.csv,arm,27,all14; alone_AngD; alone_BtH; alone_Con; alone_DivH; alone_Jnc; alone_Len; alone_Lnk; alone_MCF; alone_MGLH; alone_MHD; alone_NQPDH; alone_TPBtH; alone_TPD; alone_Wt; core9; core9+AngD; core9+Con; core9+DivH; core9+Jnc; core9+Len; core9+Lnk; core9+MCF; core9+MGLH; core9+MHD; core9+TPD; core9+Wt
+k55_null_manchester.csv,arm,26,grav_p2all; grav_p2s; grav_rand_01; grav_rand_02; grav_rand_03; grav_rand_04; grav_rand_05; grav_rand_06; grav_rand_07; grav_rand_08; grav_rand_09; grav_rand_10; grav_rand_11; grav_rand_12; grav_rand_13; grav_rand_14; grav_rand_15; grav_rand_16; grav_rand_17; grav_rand_18; grav_rand_19; grav_rand_20; grav_sq2s; pct grav_p2all in curve; pct grav_p2s in curve; pct grav_sq2s in curve
+k177_state.csv,arm,22,agg_9col; bidir_9col; cycle_roundtrip_9col; learn_bcregex; learn_l05; learn_l05_noboxcox; learn_noboxcox; mixed_t; model3_2019; ridge_random7; rt_6band; s05_9col; s1_9col; stack_winners; t6_t001; t6_t004; t6_t04; t6_t06; t6_t08; taff_9col; uni_3km_euc; uni_3km_match
+k177_leaderboard.csv,arm,22,agg_9col; bidir_9col; cycle_roundtrip_9col; learn_bcregex; learn_l05; learn_l05_noboxcox; learn_noboxcox; mixed_t; model3_2019; ridge_random7; rt_6band; s05_9col; s1_9col; stack_winners; t6_t001; t6_t004; t6_t04; t6_t06; t6_t08; taff_9col; uni_3km_euc; uni_3km_match
+k97_slope_x_radius.csv,arm,20,slp_preset; slp_s0; slp_s1; slp_s15; slp_s3; slp_s35; slp_s4; slp_s45; slp_s5; slp_s6; slpr_preset_wide; slpr_s0_wide; slpr_s15_wide; slpr_s1_wide; slpr_s35_wide; slpr_s3_wide; slpr_s45_wide; slpr_s4_wide; slpr_s5_wide; slpr_s6_wide
+k179_state.csv,arm,19,bidir_bristol; bidir_manchester; build_bournemouth; build_dudley; build_gateshead; build_newcastle; build_stoke; build_sunderland; estimators; learn_bristol_noboxcox_l05; learn_bristol_noboxcox_l07; learn_manchester_noboxcox_l05; learn_manchester_noboxcox_l07; perm_s1; poke_sheet; rt_bristol; rt_manchester; s3_loco; tf_snap
+k76_loco.csv,config,18,banded_angular; banded_angular_2d; cycle_neutral; cycle_os10; cycle_rand; cycle_rand_os10; cycle_rand_os10_b; cycle_rand_os10_hi; cycle_rand_os10_hi_b; grav_all; grav_e2s; grav_p2all; grav_p2s; grav_s2s; grav_sq2s; hybrid_matched; nested_angular; nested_angular_2d
+k76_pooled_summary.csv,config,18,banded_angular; banded_angular_2d; cycle_neutral; cycle_os10; cycle_rand; cycle_rand_os10; cycle_rand_os10_b; cycle_rand_os10_hi; cycle_rand_os10_hi_b; grav_all; grav_e2s; grav_p2all; grav_p2s; grav_s2s; grav_sq2s; hybrid_matched; nested_angular; nested_angular_2d
+k179_leaderboard.csv,arm,18,bidir_bristol; bidir_manchester; build_dudley; build_gateshead; build_newcastle; build_stoke; build_sunderland; estimators; learn_bristol_noboxcox_l05; learn_bristol_noboxcox_l07; learn_manchester_noboxcox_l05; learn_manchester_noboxcox_l07; perm_s1; poke_sheet; rt_bristol; rt_manchester; s3_loco; tf_snap
+k178_state.csv,arm,16,bidir_loose; bidir_retry; boxcox_r_s1; geh_rt; geh_s1; learn_rt_l05; learn_rt_l07; learn_s1; learn_s1_l05; learn_s1_l07; oneway_s1; s15_9col; s1_cycle_roundtrip; s1_double_radii; s1_match_9col; s3_9col
+k178_leaderboard.csv,arm,15,bidir_loose; bidir_retry; boxcox_r_s1; geh_rt; geh_s1; learn_rt_l05; learn_rt_l07; learn_s1_l05; learn_s1_l07; oneway_s1; s15_9col; s1_cycle_roundtrip; s1_double_radii; s1_match_9col; s3_9col
+k122_cv_lineformula.csv,arm,15,cvn_cv_gvi_k00; cvn_cv_gvi_k025; cvn_cv_gvi_k05; cvn_cv_gvi_k10; cvn_cv_gvi_k20; cvn_cv_lit_k00; cvn_cv_lit_k025; cvn_cv_lit_k05; cvn_cv_lit_k10; cvn_cv_lit_k20; cvn_cv_sw_k00; cvn_cv_sw_k025; cvn_cv_sw_k05; cvn_cv_sw_k10; cvn_cv_sw_k20
+k120_cv_impedance_proof.csv,arm,15,cvp_cv_gvi_k00; cvp_cv_gvi_k025; cvp_cv_gvi_k05; cvp_cv_gvi_k10; cvp_cv_gvi_k20; cvp_cv_lit_k00; cvp_cv_lit_k025; cvp_cv_lit_k05; cvp_cv_lit_k10; cvp_cv_lit_k20; cvp_cv_sw_k00; cvp_cv_sw_k025; cvp_cv_sw_k05; cvp_cv_sw_k10; cvp_cv_sw_k20
+k96_slope_ladder.csv,arm,15,slp_e123; slp_e369; slp_e4812; slp_m05; slp_m075; slp_m15; slp_m20; slp_preset; slp_s0; slp_s1; slp_s15; slp_s3; slp_s4; slp_s6; slp_s8
+k53_randomisation_scores.csv,arm,11,cycle_neutral; cycle_os10; cycle_rand_os10; cycle_rand_os10_b; cycle_rand_os10_hi; cycle_rand_os10_hi_b; noise rand0.5 A vs B; noise rand1.0 A vs B; Δ oversampling  (os10 - neutral); Δ randomisation (rand0.5 - os10); Δ randomisation (rand1.0 - os10)
+k80_radius_loco.csv,arm,11,base; calib; high; high_b; higher; higher_b; low; nqpdd05; nqpdd15; nqpdd20; tight
+k163_baseline_sensitivity.csv,arm,11,provision_fwd_k0.25; provision_fwd_k0.5; provision_fwd_k1; provision_fwd_k2; slope_s0; traffic_t0.01; traffic_t0.02; traffic_t0.04; traffic_t0.08; turn_j16; turn_j32
+k80_radius_pooled.csv,arm,11,base; calib; high; high_b; higher; higher_b; low; nqpdd05; nqpdd15; nqpdd20; tight
+day1_sdna_matched.csv,config,10,banded_angular; banded_hybrid; cycle_neutral; cycle_uniform_direct; grav_all; grav_e2s; grav_s2s; grav_sq2s; nested_angular; nested_hybrid
+k94_pooled_rescore.csv,arm,10,cycle_f_ext20; cycle_f_short10; turn_j00; turn_j01; turn_j04; turn_j08; turn_j128; turn_j16; turn_j32; turn_j64
+exp5_national.csv,spec,9,+ bus and car split; everything (class+type+motor+len); measured motor traffic only; motor traffic + link length; road class + link length; road class + type; road class + type + length; road class only; road type only
+k81c_turn_k170.csv,arm,9,turn_j00; turn_j01; turn_j02; turn_j04; turn_j08; turn_j128; turn_j16; turn_j32; turn_j64
+k81_turn_sweep.csv,arm,9,turn_j00; turn_j01; turn_j02; turn_j04; turn_j08; turn_j128; turn_j16; turn_j32; turn_j64
+k102_cardiff_slope_wider.csv,arm,9,slpr_preset_wider; slpr_s0_wider; slpr_s1_wider; slpr_s35_wider; slpr_s3_wider; slpr_s45_wider; slpr_s4_wider; slpr_s5_wider; slpr_s6_wider
+exp5b_all_roads.csv,spec,8,+ bus and car split; + bus/car split + length; measured motor traffic only; motor traffic + class + type; road class + link length; road class + type; road class only; road type only (major/minor)
+k171_ladder.csv,arm,7,a0; baseline; prov; rad_narrow; rad_wide; s0; t0
+k36_pedestrian_scores.csv,arm,6,ped_a0; ped_a05; ped_base; ped_norand_os10; ped_rand; ped_rand_b
+k36_pedestrian_scores_nqpd.csv,arm,6,ped_a0; ped_a05; ped_base; ped_norand_os10; ped_rand; ped_rand_b
+k154_ensemble.csv,arm,6,"all bands, one purpose+t; aversions only (everywhere); full_ensemble; perm_null; purposes only (t=0.04); sanity_9col"
+k91_noise_floor.csv,arm,6,A_estimator; B_subsample; C_foldgeom; D_dropfold; E_target; F_power
+k78_oxford_cycle_scores.csv,arm,6,ped_a0; ped_a05; ped_base; ped_norand_os10; ped_rand; ped_rand_b
+k36_pooled_oof.csv,arm,6,ped_a0; ped_a05; ped_base; ped_norand_os10; ped_rand; ped_rand_b
+k112_pedestrian_radius_ladder.csv,arm,5,ped_base; pedr_high; pedr_low; pedr_micro; pedr_tight
+k73_pooled_loco.csv,config,5,cycle_neutral; grav_p2all; grav_sq2s; hybrid_matched; nested_angular
+k99_radius_within_city.csv,arm,5,cycle_neutral; rad_high; rad_higher; rad_low; rad_tight
+k73_pooled_summary.csv,config,5,cycle_neutral; grav_p2all; grav_sq2s; hybrid_matched; nested_angular
+k179_s3_build.csv,arm,5,build_dudley; build_gateshead; build_newcastle; build_stoke; build_sunderland
+k147_convention_loco.csv,spec,5,log1p; log1p_backtx; poisson; raw; raw_w
+k148_convention_floors.csv,spec,5,log1p; log1p_backtx; poisson; raw; raw_w
+day1_sdna_metrics.csv,config,4,banded_angular; banded_hybrid; nested_angular; nested_hybrid
+k100_nqpdd_isolated.csv,arm,4,cycle_neutral; rad_nqpdd05; rad_nqpdd15; rad_nqpdd20
+k180_s_curve.csv,arm,4,baseline; cycle; s05; s1
+k180_geh.csv,arm,4,baseline; cycle; s05; s1
+day2_poi_reconcile.csv,arm,4,"day-1 network, POI(12); day-1 network, POI(7); phase-6 table, POI(12); phase-6 table, POI(7)"
+k171_loco_published_s.csv,arm,4,baseline; cycle; s05; s1
+k90_rail_usage.csv,arm,4,cycle_neutral; grav_high; grav_sq2s; rad_high
+k59_catchment_covariate.csv,variant,4,all_three; w_pt; w_pt_c60; w_pt_exp
+k82_gva_walk.csv,arm,4,A_grav_sq2s; B_cycle_neutral; C_nested_angular; D_cardiff_walk
+k85_mode_share.csv,arm,4,cycle_neutral; grav_high; grav_sq2s; rad_high
+k180_s_held.csv,arm,4,baseline; cycle; s05; s1
+k139b_pixels_on_target.csv,config,3,"current (K106/K107); moderate down-angle; steep, narrow"
+k182_radius.csv,arm,3,baseline; rad_narrow; rad_wide
+k175_match_analytical.csv,arm,3,C:\Users\aden\Documents\DISSERTATION\DISSERTATION\outputs\k175_match_analytical\bristol\bristol_arm.shp; C:\Users\aden\Documents\DISSERTATION\DISSERTATION\outputs\k175_match_analytical\cardiff\cardiff_arm.shp; C:\Users\aden\Documents\DISSERTATION\DISSERTATION\outputs\k175_match_analytical\manchester\manchester_arm.shp
+k174_within.csv,arm,3,baseline; rad_narrow; rad_wide
+k165_tail_calibration.csv,arm,3,base; recal_log; varmatch
+k171_loco_t0_a0.csv,arm,3,a0; baseline; t0
+k171_loco_s0_prov.csv,arm,3,baseline; prov; s0
+k174_loco.csv,arm,3,baseline; rad_narrow; rad_wide
+k93_multimodal.csv,arm,3,mm_full; mm_noconn; road_only
+k98_multimodal_placebo.csv,arm,3,mm_cycle; mm_pt; road_cycle
+k174_local_int.csv,arm,3,baseline; rad_narrow; rad_wide
+k142_loco_decomposition.csv,arm,2,baseline; fwd
+k149_convention_ladder.csv,spec,2,log1p; raw
+k152b_traffic_placebo.csv,arm,2,real; shuffled
+k172_pooled.csv,arm,2,pooled_fe; pooled_nofe
+k180_univariate.csv,arm,2,bth800; nine_col
+k179_sdna.csv,arm,2,bidir_15col; cycle_roundtrip
+k143_scale_normalised_transfer.csv,arm,2,baseline; fwd
+k184_loco.csv,arm,2,baseline; t0.04
+k76_dropped.csv,config,2,drive_prep; prep3d
+k186_ceiling.csv,arm,2,dedup_link; dedup_location
+k180_univariate_held.csv,arm,2,bth800; nine_col
+k93_placebo.csv,arm,2,mm_full; road_only

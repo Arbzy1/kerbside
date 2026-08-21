@@ -1,0 +1,28 @@
+city,la,network,links,km,traffic_free,n_counters,median_snap_m,r2_det,r2_corr,minutes,_arm,_net,_pts,vertices,nodata_bilinear,recovered_nearest,recovered_window,unresolved,fallback_pct,max_reach_m
+glasgow,Glasgow City,bike,93478,6005.785733915383,9981,200,2.2920738595530996,0.18787233961400623,0.20501468667677095,23.725882522265117,C:\Users\aden\Documents\DISSERTATION\DISSERTATION\outputs\k170_glasgow\glasgow_arm.shp,"         fid  ...  is_tf
+0          1  ...   True
+1          2  ...   True
+2          3  ...  False
+3          4  ...  False
+4          5  ...  False
+...      ...  ...    ...
+93473  93474  ...   True
+93474  93475  ...   True
+93475  93476  ...   True
+93476  93477  ...  False
+93477  93478  ...   True
+
+[93478 rows x 10 columns]","       count_point_id  year  ... all_motor_vehicles               geometry
+3624           804853  2019  ...              10616  POINT (252436 659645)
+3760           804776  2019  ...               1649  POINT (261266 663404)
+3855           804713  2019  ...               6913  POINT (262536 664349)
+3876           804725  2019  ...                483  POINT (262347 665123)
+3936           804683  2019  ...               2291  POINT (256115 664667)
+...               ...   ...  ...                ...                    ...
+34608           40809  2025  ...              78457  POINT (261800 666050)
+34627           40811  2025  ...             121988  POINT (255340 664220)
+34665           40817  2025  ...               9382  POINT (259200 664300)
+34670           40810  2025  ...             105715  POINT (257950 666000)
+34702           40816  2025  ...              17308  POINT (253800 665000)
+
+[259 rows x 17 columns]",377056,0,0,0,0,0.0,0.0
